@@ -91,4 +91,6 @@ RUN ./gradlew assembleDebug
 
 WORKDIR /code/
 
+RUN chmod +x variables
+
 CMD "./variables.sh"
