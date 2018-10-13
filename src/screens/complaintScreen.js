@@ -5,9 +5,12 @@ import Header from '../components/Header';
 import * as constant from '../constants/publicAgencyInformations';
 import { backHandlerPopToMain } from '../NavigationFunctions';
 
+// ver styled components
+
 const styles = StyleSheet.create({
   complaintScreen: {
     flex: 1,
+    margin: props => props.espacado ? 100 : 20,
   },
 
   textBox: {
