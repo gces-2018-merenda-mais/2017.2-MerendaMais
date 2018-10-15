@@ -341,10 +341,12 @@ export default class ScheduleMeeting extends React.Component {
     );
   }
 
+  // opens map at chosen gps locale
   openLocationChoosen() {
     openMap({ latitude: this.state.meeting.lat, longitude: this.state.meeting.long });
   }
 
+  // button with show location option
   showLocation() {
     if (this.state.meeting.lat !== null && this.state.meeting.long !== null) {
       return (
@@ -412,6 +414,7 @@ export default class ScheduleMeeting extends React.Component {
     );
   }
 
+  // main renderer
   render() {
     return (
       <View style={styles.principal}>
