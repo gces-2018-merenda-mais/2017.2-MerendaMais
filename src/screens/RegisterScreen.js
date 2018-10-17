@@ -134,6 +134,7 @@ export default class RegisterScreen extends React.Component {
         CAE_UF: '',
         CAE_municipalDistrict: '',
         CAE: '',
+        valid: false,
       },
       passwordCompared: '',
     };
@@ -152,7 +153,6 @@ export default class RegisterScreen extends React.Component {
 
   // Verify if there's a error in some field form.
   register() {
-    const cpfRegex = /[0-9]{11}/g;
     const nameRegex = /[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g;
     const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     const passwordRegex = /^(?=.{6,})(?!.*\s).*$/g;
@@ -161,12 +161,6 @@ export default class RegisterScreen extends React.Component {
 
     let error = false;
     let errorMessage = '';
-
-    // Validating CPF.
-    if (!cpfRegex.test(this.state.profile.cpf)) {
-      error = true;
-      errorMessage += 'CPF inválido.\n';
-    }
 
     // Validating Name.
     if (!nameRegex.test(this.state.name) || this.state.name.trim() === '') {
@@ -236,10 +230,10 @@ export default class RegisterScreen extends React.Component {
     }
 
     // Checking if was found a irregularity in register fields.
-    if (error === false) {
-      this.props.asyncRegisterCounselor(this.state);
+    if (this.state.profile.valid) {
+      // this.props.asyncRegisterCounselor(this.state);
     } else {
-      Alert.alert(REGISTER_FAIL_TITLE, errorMessage);
+      Alert.alert(REGISTER_FAIL_TITLE, 'Existem campos inválidos!');
     }
   }
 
@@ -257,8 +251,8 @@ export default class RegisterScreen extends React.Component {
               <Text>CPF</Text>
               <CpfField
                 value={this.state.profile.cpf}
-                callback={validCpf =>
-                  this.setState({ profile: { ...this.state.profile, cpf: validCpf } })}
+                callback={(validCpf, valid) =>
+                  this.setState({ profile: { ...this.state.profile, cpf: validCpf, valid } })}
               />
 
               <Text>Nome</Text>
