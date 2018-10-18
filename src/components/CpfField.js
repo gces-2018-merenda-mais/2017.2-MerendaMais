@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View, TextInput, Text } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from '../Styles/GeneralStyles';
+import ErrorMessage from './ErrorMessage';
 
 const validateCpf = require('validar-cpf');
 
@@ -28,6 +29,7 @@ export default class CpfField extends React.Component {
   validateCpf = (cpf, callback) => {
     const validCpf = cpf.replace(/[^0-9]/g, '');
     const valid = validateCpf(validCpf);
+
     if (this.state.isValid !== valid) {
       this.setState({ isValid: valid });
     }
@@ -35,13 +37,15 @@ export default class CpfField extends React.Component {
     if (!valid) {
       this.state.errorMessage = 'CPF inválido.\n';
     }
+
     callback(validCpf, valid);
   };
+
   render() {
     const { value, callback } = this.props;
     return (
       <View>
-        <View style={this.setStyle()} >
+        <View style={this.setStyle()}>
           <FontAwesome name="user-circle" style={styles.icon} size={26} color="black" />
           <TextInput
             style={styles.InputStyle}
@@ -51,15 +55,13 @@ export default class CpfField extends React.Component {
             returnKeyLabel={'next'}
             maxLength={11}
             keyboardType={'numeric'}
-            onChangeText={cpf => this.validateCpf(cpf, this.props.callback)}
+            onChangeText={cpf => this.validateCpf(cpf, callback)}
             value={value}
             onFocus={() => this.setState({ focused: true })}
           />
         </View>
 
-        <View style={{ opacity: !this.state.isValid ? 100 : 0 }}>
-          <Text>{this.state.errorMessage}</Text>
-        </View>
+        <ErrorMessage valid={this.state.isValid} errorText={this.state.errorMessage} />
       </View>
     );
   }

@@ -181,8 +181,12 @@ const styles = {
   },
 
   inputFieldValidStyle: {
-    borderColor: 'green'
-  }
+    borderColor: 'green',
+  },
+
+  textMessageError: {
+    color: 'red',
+  },
 };
 
 export default styles;

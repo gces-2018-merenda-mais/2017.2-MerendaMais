@@ -180,12 +180,6 @@ export default class RegisterScreen extends React.Component {
       errorMessage += 'Senhas digitadas devem ser iguais.\n';
     }
 
-    // Validating Email.
-    if (!emailRegex.test(this.state.email)) {
-      error = true;
-      errorMessage += 'Email inválido.\n';
-    }
-
     // Validating Phone.
     if (!phoneRegex1.test(this.state.profile.phone) &&
       !phoneRegex2.test(this.state.profile.phone)) {
@@ -233,7 +227,7 @@ export default class RegisterScreen extends React.Component {
     if (this.state.profile.valid) {
       // this.props.asyncRegisterCounselor(this.state);
     } else {
-      Alert.alert(REGISTER_FAIL_TITLE, 'Existem campos inválidos!');
+      Alert.alert(REGISTER_FAIL_TITLE, 'Existem campos inválidos! \n' + errorMessage);
     }
   }
 
@@ -264,7 +258,7 @@ export default class RegisterScreen extends React.Component {
 
               <EmailField
                 value={this.state.email}
-                callback={validEmail => this.setState({ email: validEmail })}
+                callback={(validEmail, valid) => this.setState({ email: validEmail, valid })}
                 placeholder="Digite o seu email"
                 size={26}
               />
