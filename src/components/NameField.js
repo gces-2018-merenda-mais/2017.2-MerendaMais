@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { View, TextInput, Text } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import styles from '../Styles/GeneralStyles';
+import ErrorMessage from './ErrorMessage';
 
 class NameField extends React.Component {
   state = {
     isValid: false,
     focused: false,
+    errorMessage: '',
   };
 
   setStyle() {
@@ -25,11 +27,16 @@ class NameField extends React.Component {
   validateName = (name, nameValidated) => {
     const validName = name.replace(/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g, '');
     nameValidated(validName);
+    let valid = false
 
-    if(validName.length > 3){
-      this.setState({ isValid: true });
-    } else {
-      this.setState({ isValid: false });
+    if(name.length > 3) valid = true;
+
+    if (this.state.isValid !== valid) {
+      this.setState({ isValid: valid });
+    }
+
+    if (!valid) {
+      this.state.errorMessage = 'Nome inválido.\n';
     }
   };
 
@@ -54,9 +61,7 @@ class NameField extends React.Component {
             onFocus={() => this.setState({ focused: true })}
           />
       </View>
-        <View style={{ opacity: !this.state.isValid && this.state.focused ? 100 : 0 }}>
-            <Text style={{color: 'red'}}>Nome inválido!</Text>
-        </View>
+      <ErrorMessage valid={this.state.isValid} errorText={this.state.errorMessage} />
       </View>
     );
   }
