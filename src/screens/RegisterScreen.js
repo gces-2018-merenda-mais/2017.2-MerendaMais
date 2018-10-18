@@ -153,7 +153,6 @@ export default class RegisterScreen extends React.Component {
 
   // Verify if there's a error in some field form.
   register() {
-    const nameRegex = /[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g;
     const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     const passwordRegex = /^(?=.{6,})(?!.*\s).*$/g;
     const phoneRegex1 = /[0-9]{11}/g;
@@ -161,12 +160,6 @@ export default class RegisterScreen extends React.Component {
 
     let error = false;
     let errorMessage = '';
-
-    // Validating Name.
-    if (!nameRegex.test(this.state.name) || this.state.name.trim() === '') {
-      error = true;
-      errorMessage += 'Nome inválido.\n';
-    }
 
     // Validating Password.
     if (!passwordRegex.test(this.state.password)) {
