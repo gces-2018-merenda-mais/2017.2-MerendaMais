@@ -255,10 +255,9 @@ export default class RegisterScreen extends React.Component {
                   this.setState({ profile: { ...this.state.profile, cpf: validCpf, valid } })}
               />
 
-              <Text>Nome</Text>
               <NameField
                 value={this.state.name}
-                callback={validName => this.setState({ name: validName })}
+                nameValidated={validName => this.setState({ name: validName })}
               />
 
               <Text>Email</Text>
