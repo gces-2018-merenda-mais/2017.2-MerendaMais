@@ -165,11 +165,40 @@ export default class RegisterScreen extends React.Component {
       errorMessage += 'Senhas digitadas devem ser iguais.\n';
     }
 
-    // Validating Phone.
-    if (!phoneRegex1.test(this.state.profile.phone) &&
-      !phoneRegex2.test(this.state.profile.phone)) {
+    // Validating is President.
+    if (this.state.profile.isPresident === '') {
       error = true;
-      errorMessage += 'Telefone inválido.\n';
+      errorMessage += 'Cargo não selecionado.\n';
+    }
+
+    // Validating Counselor Type.
+    if (this.state.profile.counselorType === '') {
+      error = true;
+      errorMessage += 'Tipo de Conselheiro não selecionado\n';
+    }
+
+    // Validating Segment.
+    if (this.state.profile.segment === '') {
+      error = true;
+      errorMessage += 'Segmento não selecionado.\n';
+    }
+
+    // Validating CAE type.
+    if (this.state.profile.CAE_Type === '') {
+      error = true;
+      errorMessage += 'Tipo de CAE não selecionado.\n';
+    }
+
+    // Validating CAE UF.
+    if (this.state.profile.CAE_UF === '') {
+      error = true;
+      errorMessage += 'UF não selecionada\n';
+    }
+
+    // Validating CAE municipal district.
+    if (this.state.profile.CAE_Type === MUNICIPAL_COUNSELOR_CAE && this.state.profile.CAE_municipalDistrict === '') {
+      error = true;
+      errorMessage += 'Município não selecionado\n';
     }
 
     // Checking if was found a irregularity in register fields.
@@ -231,10 +260,9 @@ export default class RegisterScreen extends React.Component {
                 size={26}
               />
 
-              <Text>Telefone</Text>
               <PhoneField
                 value={this.state.profile.phone}
-                callback={validPhone =>
+                phoneValidated={validPhone =>
                   this.setState({ profile: { ...this.state.profile, phone: validPhone } })}
               />
 

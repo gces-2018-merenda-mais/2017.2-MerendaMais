@@ -196,7 +196,7 @@
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="fbde4c67f8a8e9861d97078cf9fb6b0570839188">
+        sha1="74923b5feb21e1a032664410dcc186b00033af4e">
         <dex dex="/code/android/app/build/intermediates/pre-dexed/debug/MerendaMais-react-native-html-to-pdf-unspecified_25567429be2386dd7167b1bfd7cda57e60cad591.jar" />
     </item>
     <item
@@ -241,7 +241,7 @@
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="8768eb6bccba561898490d7f419ed5c494644d47">
+        sha1="eb45c6df59298c13692c43ae59daad6560a8a543">
         <dex dex="/code/android/app/build/intermediates/pre-dexed/debug/MerendaMais-react-native-maps-unspecified_2c9d812e52e8d75ecefa311d4b2e49a3bd924c4f.jar" />
     </item>
     <item
