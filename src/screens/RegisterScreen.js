@@ -153,23 +153,11 @@ export default class RegisterScreen extends React.Component {
 
   // Verify if there's a error in some field form.
   register() {
-<<<<<<< HEAD
-    
-=======
-    const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
->>>>>>> 7a7ed54c94e7242618c906cb52e77ea3b1f287be
-    const passwordRegex = /^(?=.{6,})(?!.*\s).*$/g;
     const phoneRegex1 = /[0-9]{11}/g;
     const phoneRegex2 = /[0-9]{10}/g;
 
     let error = false;
     let errorMessage = '';
-
-    // Validating Password.
-    if (!passwordRegex.test(this.state.password)) {
-      error = true;
-      errorMessage += 'Senha Inválida (*Não deve ter espaços *Tamanho mínimo 6 caracteres).\n';
-    }
 
     // Validating Match Password
     if (this.state.password !== this.state.passwordCompared) {
@@ -186,7 +174,7 @@ export default class RegisterScreen extends React.Component {
 
     // Checking if was found a irregularity in register fields.
     if (this.state.profile.valid) {
-      // this.props.asyncRegisterCounselor(this.state);
+      this.props.asyncRegisterCounselor(this.state);
     } else {
       Alert.alert(REGISTER_FAIL_TITLE, 'Existem campos inválidos! \n' + errorMessage);
     }
@@ -226,7 +214,7 @@ export default class RegisterScreen extends React.Component {
 
               <Text>Senha</Text>
               <PasswordField
-                callback={validPassword => this.setState({ password: validPassword })}
+                callback={(validPassword, valid) => this.setState({ password: validPassword, valid })}
                 password={this.state.password}
                 placeholder="Digite sua senha"
                 isPassword
