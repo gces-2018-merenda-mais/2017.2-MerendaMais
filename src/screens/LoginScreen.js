@@ -7,6 +7,7 @@ import {
   View,
   Keyboard,
   BackHandler,
+  ScrollView
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
@@ -23,13 +24,12 @@ const styles = StyleSheet.create({
 
   content: {
     flex: 6,
-    paddingHorizontal: 18,
-    backgroundColor: 'white',
-    justifyContent: 'center',
+    marginTop: 125,
+    paddingHorizontal: 15,
   },
 
   footer: {
-    flex: 0.5,
+    flex: 0.15,
     borderTopColor: '#a9a9a9',
     borderTopWidth: 1,
     backgroundColor: 'white',
@@ -104,37 +104,38 @@ export default class LoginScreen extends React.Component {
     return (
       <View style={styles.principal}>
         <Header />
-        <KeyboardAvoidingView style={styles.content} behavior="padding">
-          <EmailField
-            callback={emailInput => this.setState({ email: emailInput })}
-            placeholder="Email"
-            onSubmitEditing={() => this.setState({ focus: true })}
-            value={this.state.email}
-            size={28}
-          />
+        <ScrollView style={styles.content}>
+          <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
+            <EmailField
+              value={this.state.email}
+              callback={emailInput => this.setState({ email: emailInput })}
+              placeholder="Email"
+              onSubmitEditing={() => this.setState({ focus: true })}
+              size={28}
+            />
 
-          <PasswordField
-            callback={passwordInput => this.setState({ password: passwordInput })}
-            password={this.state.password}
-            placeholder="Digite sua senha"
-            isPassword
-            size={28}
-            focus={this.state.focus}
-          />
+            <PasswordField
+              callback={passwordInput => this.setState({ password: passwordInput })}
+              password={this.state.password}
+              placeholder="Digite sua senha"
+              isPassword
+              size={28}
+              focus={this.state.focus}
+            />
 
-          <ButtonWithActivityIndicator
-            activityIndicatorStyle={styles.loading}
-            onPress={() => {
-              Keyboard.dismiss();
-              this.props.asyncLoginCounselor(this.state);
-            }}
-            isLoading={this.props.isLoading}
-            buttonKey="LoginCounselor"
-            buttonText="Entrar"
-            buttonStyle={styles.buttonLogin}
-          />
-
-        </KeyboardAvoidingView>
+            <ButtonWithActivityIndicator
+              activityIndicatorStyle={styles.loading}
+              onPress={() => {
+                Keyboard.dismiss();
+                this.props.asyncLoginCounselor(this.state);
+              }}
+              isLoading={this.props.isLoading}
+              buttonKey="LoginCounselor"
+              buttonText="Entrar"
+              buttonStyle={styles.buttonLogin}
+            />
+          </KeyboardAvoidingView>
+        </ScrollView>
 
         <View style={styles.footer}>
           <TouchableOpacity
