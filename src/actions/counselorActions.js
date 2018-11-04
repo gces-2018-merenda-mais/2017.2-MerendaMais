@@ -32,7 +32,7 @@ import {
 } from '../constants/errorConstants';
 import { errorGenerator } from './schedulingVisitActions';
 import { editAccountData, editCounselorProfile } from './auxiliary/editCounselorAuxiliary';
-import { treatingGetUserProfileInLoginError } from '../ErrorTreatment';
+import getUserProfileInLoginErrorHandler from '../customErrorTreatments/userProfileInLoginError';
 
 const FILE_NAME = 'counselorActions.js';
 
@@ -579,7 +579,7 @@ export const selectTypeOfAuthenticationFailure = (errorMessage) => {
       break;
     case PROFILE_LOGIN_ERROR:
       logWarn(FILE_NAME, 'asyncLoginCounselor', 'ProfileError');
-      treatingGetUserProfileInLoginError(errorMessage.status);
+      getUserProfileInLoginErrorHandler(errorMessage.status);
       break;
     case GROUP_LOGIN_ERROR:
       logWarn(FILE_NAME, 'asyncLoginCounselor', 'GroupError');
