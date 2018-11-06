@@ -14,7 +14,7 @@ import EmailField from '../components/EmailField';
 import PasswordField from '../components/PasswordField';
 import ButtonWithActivityIndicator from '../components/ButtonWithActivityIndicator';
 import { backHandlerPop } from '../NavigationFunctions';
-import styles from '../Styles/LoginScreenStyle';
+import styles from '../Styles/LoginScreenStyles';
 
 export default class LoginScreen extends React.Component {
   constructor(props) {

@@ -4,7 +4,7 @@ import Hyperlink from 'react-native-hyperlink';
 import Header from '../components/Header';
 import * as constant from '../constants/publicAgencyInformations';
 import { backHandlerPopToMain } from '../NavigationFunctions';
-import styles from '../Styles/ComplaintStyle';
+import styles from '../Styles/ComplaintStyles';
 
 class complaintScreen extends React.PureComponent {
   componentWillMount() {
