@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyleSheet,
   TouchableOpacity,
   Text,
   View,
   ScrollView,
-  Dimensions,
   BackHandler,
   Alert,
 } from 'react-native';
@@ -48,53 +46,9 @@ import { convertingJSONToString } from '../../actions/counselorActions';
 import { errorGenerator } from '../../actions/schedulingVisitActions';
 import Header from '../../components/Header';
 import ButtonWithActivityIndicator from '../../components/ButtonWithActivityIndicator';
-
-const { width } = Dimensions.get('window');
+import styles from '../../Styles/MainReportsScreenStyles'
 
 const FILE_NAME = 'MainReportsScreen.js';
-
-const styles = StyleSheet.create({
-
-  buttonContainer: {
-    paddingVertical: 15,
-    borderWidth: 1,
-    borderRadius: 7,
-    marginHorizontal: 15,
-    marginVertical: 13,
-    backgroundColor: '#FF9500',
-    justifyContent: 'flex-end',
-  },
-
-  buttonText: {
-    textAlign: 'center',
-    color: '#FFF',
-  },
-
-  content: {
-    backgroundColor: 'white',
-    flex: 1,
-  },
-
-  text: {
-    flex: 1,
-    width: width * 0.7,
-    paddingLeft: 10,
-    color: 'blue',
-    fontSize: 20,
-  },
-
-  statusView: {
-    flexDirection: 'row',
-    paddingVertical: 20,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-
-  loading: {
-    marginTop: 15,
-    marginBottom: 25,
-  },
-});
 
 // Component to each clickable text that goes to checklists.
 const GoToChecklistClickableText = props => (
