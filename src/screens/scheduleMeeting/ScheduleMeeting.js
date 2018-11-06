@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import openMap from 'react-native-open-maps';
-import { Alert, StyleSheet, ActivityIndicator, Text, TextInput, View, TouchableOpacity, Dimensions, KeyboardAvoidingView, ScrollView, BackHandler } from 'react-native';
+import { Alert, ActivityIndicator, Text, TextInput, View, TouchableOpacity, Dimensions, KeyboardAvoidingView, ScrollView, BackHandler } from 'react-native';
 import PopupDialog, {
   DialogTitle,
   DialogButton,
