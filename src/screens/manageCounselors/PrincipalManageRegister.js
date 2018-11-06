@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, BackHandler } from 'react-native';
+import { BackHandler } from 'react-native';
 import { TabViewAnimated, SceneMap, TabBar } from 'react-native-tab-view';
 import Header from '../../components/Header';
 import ManageNotAcceptedRegistersScreenContainer from '../../Containers/manageCounselors/ManageNotAcceptedRegistersScreenContainer';
 import ManageAcceptedRegistersScreenContainer from '../../Containers/manageCounselors/ManageAcceptedRegistersScreenContainer';
 import { backHandlerPopToMain } from '../../NavigationFunctions';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+import styles from '../../Styles/ManageConselors/PrincipalManageRegisterStyles'
 
 export default class Principal extends Component {
   constructor(props) {
