@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import openMap from 'react-native-open-maps';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, Text, TouchableOpacity, ScrollView, BackHandler } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, BackHandler } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { SCHOOL_ENDPOINT } from '../constants/generalConstants';
 import { logInfo, logWarn } from '../../logConfig/loggers';

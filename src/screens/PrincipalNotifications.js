@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, BackHandler } from 'react-native';
+import { Text, View, TouchableOpacity, BackHandler } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Header from '../components/Header';
 import { backHandlerPopToMain } from '../NavigationFunctions';

@@ -3,7 +3,6 @@ import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 import React from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   TouchableOpacity,

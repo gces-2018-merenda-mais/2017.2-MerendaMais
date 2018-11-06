@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView, BackHandler } from 'react-native';
+import { View, Text, ScrollView, BackHandler } from 'react-native';
 import Hyperlink from 'react-native-hyperlink';
 import Header from '../components/Header';
 import * as constant from '../constants/publicAgencyInformations';
