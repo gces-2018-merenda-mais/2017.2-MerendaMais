@@ -1,7 +1,6 @@
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import React from 'react';
 import {
-  StyleSheet,
   Text,
   ScrollView,
   View,
