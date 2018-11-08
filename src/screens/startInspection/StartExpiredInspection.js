@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   ScrollView,
@@ -11,34 +10,7 @@ import stylesList from '../../Styles/ListStyles';
 import ScheduleCard from '../../components/ScheduleCard';
 import Button from '../../components/Button';
 import { getVisitData } from '../../services/extractDataInspection';
-
-
-const styles = StyleSheet.create({
-  principal: {
-    flex: 1,
-  },
-  content: {
-    flex: 1,
-    paddingTop: 6,
-    backgroundColor: 'white',
-  },
-});
-
-const buttonBox = StyleSheet.create({
-  design: {
-    borderColor: 'black',
-    borderWidth: 1,
-    borderRadius: 7,
-    backgroundColor: '#DEDEDE',
-    padding: 8,
-    justifyContent: 'center',
-    marginRight: 13,
-  },
-  text: {
-    fontSize: 12,
-    textAlign: 'center',
-  },
-});
+import {styles, buttonBox} from '../../Styles/StartInspection/StartExpiredInspectionStyles'
 
 class StartExpiredInspection extends React.Component {
   constructor(props) {

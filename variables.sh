@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# variables and configs here ara for DEVELOPMENT ENVIRONMENT ONLY
+# and cannot be shipped into production
+
 DISPLAY=:0.0 ; export DISPLAY xhost +
 
 adb reverse tcp:8081 tcp:8081

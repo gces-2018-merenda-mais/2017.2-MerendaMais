@@ -13,16 +13,16 @@
 - Tenha certeza que a rede que você está conectado permita que se faça download das imagens do docker (algumas redes corporativas não permitem)
 - Verifique se o arquivo **/android/app/build.gradle** possui nas linhas indicadas os seguintes valores:
 
-```gradle
+```javascript
 ...
 96    defaultConfig {
-97        applicationId "com.merendamais"
-98        minSdkVersion 16
-99        targetSdkVersion 25
-100       versionCode 34
-101       versionName "1.6"
+97        applicationId: "com.merendamais"
+98        minSdkVersion: 16
+99        targetSdkVersion: 25
+100       versionCode: 34
+101       versionName: "1.6"
 102       ndk {
-103           abiFilters "armeabi-v7a", "x86"
+103           abiFilters: "armeabi-v7a", "x86"
 104       }
 105   }
 ...

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   ScrollView,
@@ -14,22 +13,7 @@ import LoadingIndicator from '../../components/LoadingIndicator';
 import { getManagerCounselorData } from '../../services/extractDataCounselor';
 import ScheduleCard from '../../components/ScheduleCard';
 import Button from '../../components/Button';
-
-const buttonBox = StyleSheet.create({
-  design: {
-    borderColor: 'black',
-    borderWidth: 1,
-    borderRadius: 7,
-    backgroundColor: '#FF3B30',
-    padding: 8,
-    justifyContent: 'center',
-    marginRight: 13,
-  },
-  text: {
-    fontSize: 12,
-    textAlign: 'center',
-  },
-});
+import buttonBox from '../../Styles/ManageConselors/ManageAcceptedRegistersStyles'
 
 export default class ManageAcceptedRegistersScreen extends React.Component {
   componentWillMount() {

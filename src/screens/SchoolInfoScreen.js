@@ -2,68 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import openMap from 'react-native-open-maps';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, Text, TouchableOpacity, ScrollView, BackHandler } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, BackHandler } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { SCHOOL_ENDPOINT } from '../constants/generalConstants';
 import { logInfo, logWarn } from '../../logConfig/loggers';
 import Header from '../components/Header';
 import { backHandlerPop } from '../NavigationFunctions';
+import styles from '../Styles/SchoolInfoScreenStyles'
 
 const FILE_NAME = 'SchoolInfoScreen.js';
-
-const styles = StyleSheet.create({
-
-  schoolInfoScreen: {
-    flex: 1,
-
-    backgroundColor: 'white',
-  },
-
-  buttonContainer: {
-    paddingVertical: 16,
-    borderWidth: 1,
-    borderRadius: 8,
-    marginHorizontal: 15,
-    marginTop: 10,
-    marginBottom: 15,
-    backgroundColor: '#FF9500',
-    justifyContent: 'flex-end',
-  },
-
-  buttonText: {
-    textAlign: 'center',
-    color: '#FFF',
-  },
-
-  listInfo: {
-    flex: 4,
-    marginHorizontal: 10,
-    padding: 10,
-    width: 340,
-    borderColor: 'black',
-    borderWidth: 1,
-    borderRadius: 7,
-  },
-
-  text: {
-    color: '#95a5a6',
-    fontSize: 20,
-    paddingTop: 10,
-    paddingLeft: 10,
-    paddingBottom: 5,
-  },
-
-  textInfotmation: {
-    paddingVertical: 2,
-    color: '#95a5a6',
-    fontSize: 20,
-  },
-
-  textResponse: {
-    fontSize: 19,
-  },
-
-});
 
 class SchoolInfoScreen extends React.Component {
   constructor(props) {
