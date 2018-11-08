@@ -69,6 +69,7 @@ export default class RegisterScreen extends React.Component {
         CAE_UF: '',
         CAE_municipalDistrict: '',
         CAE: '',
+        valid: false,
       },
       passwordCompared: '',
     };
@@ -87,51 +88,16 @@ export default class RegisterScreen extends React.Component {
 
   // Verify if there's a error in some field form.
   register() {
-    const cpfRegex = /[0-9]{11}/g;
-    const nameRegex = /[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g;
-    const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    const passwordRegex = /^(?=.{6,})(?!.*\s).*$/g;
     const phoneRegex1 = /[0-9]{11}/g;
     const phoneRegex2 = /[0-9]{10}/g;
 
     let error = false;
     let errorMessage = '';
 
-    // Validating CPF.
-    if (!cpfRegex.test(this.state.profile.cpf)) {
-      error = true;
-      errorMessage += 'CPF inválido.\n';
-    }
-
-    // Validating Name.
-    if (!nameRegex.test(this.state.name) || this.state.name.trim() === '') {
-      error = true;
-      errorMessage += 'Nome inválido.\n';
-    }
-
-    // Validating Password.
-    if (!passwordRegex.test(this.state.password)) {
-      error = true;
-      errorMessage += 'Senha Inválida (*Não deve ter espaços *Tamanho mínimo 6 caracteres).\n';
-    }
-
     // Validating Match Password
     if (this.state.password !== this.state.passwordCompared) {
       error = true;
       errorMessage += 'Senhas digitadas devem ser iguais.\n';
-    }
-
-    // Validating Email.
-    if (!emailRegex.test(this.state.email)) {
-      error = true;
-      errorMessage += 'Email inválido.\n';
-    }
-
-    // Validating Phone.
-    if (!phoneRegex1.test(this.state.profile.phone) &&
-      !phoneRegex2.test(this.state.profile.phone)) {
-      error = true;
-      errorMessage += 'Telefone inválido.\n';
     }
 
     // Validating is President.
@@ -171,10 +137,10 @@ export default class RegisterScreen extends React.Component {
     }
 
     // Checking if was found a irregularity in register fields.
-    if (error === false) {
+    if (this.state.profile.valid) {
       this.props.asyncRegisterCounselor(this.state);
     } else {
-      Alert.alert(REGISTER_FAIL_TITLE, errorMessage);
+      Alert.alert(REGISTER_FAIL_TITLE, 'Existem campos inválidos! \n' + errorMessage);
     }
   }
 
@@ -192,28 +158,27 @@ export default class RegisterScreen extends React.Component {
               <Text>CPF</Text>
               <CpfField
                 value={this.state.profile.cpf}
-                callback={validCpf =>
-                  this.setState({ profile: { ...this.state.profile, cpf: validCpf } })}
+                callback={(validCpf, valid) =>
+                  this.setState({ profile: { ...this.state.profile, cpf: validCpf, valid } })}
               />
 
-              <Text>Nome</Text>
               <NameField
                 value={this.state.name}
-                callback={validName => this.setState({ name: validName })}
+                nameValidated={validName => this.setState({ name: validName })}
               />
 
               <Text>Email</Text>
 
               <EmailField
                 value={this.state.email}
-                callback={validEmail => this.setState({ email: validEmail })}
+                callback={(validEmail, valid) => this.setState({ email: validEmail, valid })}
                 placeholder="Digite o seu email"
                 size={26}
               />
 
               <Text>Senha</Text>
               <PasswordField
-                callback={validPassword => this.setState({ password: validPassword })}
+                callback={(validPassword, valid) => this.setState({ password: validPassword, valid })}
                 password={this.state.password}
                 placeholder="Digite sua senha"
                 isPassword
@@ -230,20 +195,20 @@ export default class RegisterScreen extends React.Component {
                 size={26}
               />
 
-              <Text>Telefone</Text>
               <PhoneField
                 value={this.state.profile.phone}
-                callback={validPhone =>
+                phoneValidated={validPhone =>
                   this.setState({ profile: { ...this.state.profile, phone: validPhone } })}
               />
 
 
               <Text>Cargo</Text>
               <DropdownComponent
+                fieldName='Cargo'
                 selectedValue={this.state.profile.isPresident}
-                callback={isPresidentChecked =>
+                callback={(isPresidentChecked, valid) =>
                   this.setState(
-                    { profile: { ...this.state.profile, isPresident: isPresidentChecked } },
+                    { profile: { ...this.state.profile, isPresident: isPresidentChecked, valid } },
                   )}
                 pickerTitle={[
                   <Picker.Item value="" label="Escolha seu cargo" color="#95a5a6" />,
@@ -256,9 +221,10 @@ export default class RegisterScreen extends React.Component {
 
               <Text>Tipo de Conselheiro</Text>
               <DropdownComponent
+                fieldName='Tipo de Conselheiro'
                 selectedValue={this.state.profile.counselorType}
-                callback={counselorTypeChecked => this.setState(
-                  { profile: { ...this.state.profile, counselorType: counselorTypeChecked } },
+                callback={(counselorTypeChecked, valid) => this.setState(
+                  { profile: { ...this.state.profile, counselorType: counselorTypeChecked, valid } },
                 )}
                 pickerTitle={[
                   <Picker.Item value="" label="Escolha seu cargo" color="#95a5a6" />,
@@ -272,11 +238,13 @@ export default class RegisterScreen extends React.Component {
 
               <Text>Segmento</Text>
               <DropdownComponent
+                fieldName='Segmento'
                 selectedValue={this.state.profile.segment}
-                callback={segmentChecked => this.setState({
+                callback={(segmentChecked, valid) => this.setState({
                   profile: {
                     ...this.state.profile,
                     segment: segmentChecked,
+                    valid
                   },
                 })}
                 pickerTitle={[
@@ -292,8 +260,9 @@ export default class RegisterScreen extends React.Component {
 
               <Text>Tipo do CAE</Text>
               <DropdownComponent
+                fieldName='Tipo do CAE'
                 selectedValue={this.state.profile.CAE_Type}
-                callback={caeType => (
+                callback={(caeType, valid) => (
                   caeType === STATE_COUNSELOR_CAE ?
                     this.setState({
                       profile: {
@@ -301,6 +270,7 @@ export default class RegisterScreen extends React.Component {
                         CAE_Type: caeType,
                         CAE_municipalDistrict: '',
                         CAE: `${UfInitials(this.state.profile.CAE_UF)}`.trim(),
+                        valid,
                       },
                     })
                     :
@@ -308,7 +278,9 @@ export default class RegisterScreen extends React.Component {
                       profile: {
                         ...this.state.profile,
                         CAE_Type: caeType,
-                        CAE: `${this.state.profile.CAE_municipalDistrict} ${UfInitials(this.state.profile.CAE_UF)}`.trim(),
+                        CAE: `${this.state.profile.CAE_municipalDistrict} ${UfInitials(this.state.profile.CAE_UF),
+                        valid
+                      }`.trim(),
                       },
                     })
                 )}
@@ -323,13 +295,15 @@ export default class RegisterScreen extends React.Component {
 
               <Text>UF do CAE</Text>
               <DropdownComponent
+                fieldName='CAE'
                 selectedValue={this.state.profile.CAE_UF}
-                callback={checkedUf => this.setState({
+                callback={(checkedUf, valid) => this.setState({
                   profile: {
                     ...this.state.profile,
                     CAE_UF: checkedUf,
                     CAE_municipalDistrict: '',
                     CAE: `${this.state.profile.CAE_municipalDistrict} ${checkedUf.substr(0, 2)}`.trim(),
+                    valid,
                   },
                 })}
                 pickerTitle={[
