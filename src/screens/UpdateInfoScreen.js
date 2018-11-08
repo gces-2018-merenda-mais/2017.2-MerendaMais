@@ -26,7 +26,7 @@ import NameField from '../components/NameField';
 import PhoneField from '../components/PhoneField';
 import ShowToast from '../components/Toast';
 import { EDIT_ACCOUNT_ERROR, EDIT_PROFILE_ERROR } from '../constants/errorConstants';
-import treatingEditCounselorError from '../ErrorTreatment';
+import editConselorErrorHandler from '../customErrorTreatments/userProfileInLoginError';
 import { backHandlerPop } from '../NavigationFunctions';
 import styles from '../Styles/UpdateInfoScreenStyles'
 
@@ -96,10 +96,10 @@ export default class UpdateInfoScreen extends React.Component {
         const errorJson = JSON.parse(error.message);
         switch (errorJson.name) {
           case EDIT_ACCOUNT_ERROR:
-            treatingEditCounselorError(errorJson.status);
+            editConselorErrorHandler(errorJson.status);
             break;
           case EDIT_PROFILE_ERROR:
-            treatingEditCounselorError(errorJson.status);
+            editConselorErrorHandler(errorJson.status);
             break;
           default:
             break;

@@ -15,7 +15,8 @@ import {
 } from '../constants/generalConstants';
 import { SET_MEETING_LOCATION_LONGITUDE, SET_MEETING_LOCATION_LATITUDE } from './types';
 import { resetList, setScheduleMeetingList } from './listActions';
-import { GetMeetingPostListError, GetMeetingContentError } from '../Exceptions';
+import GetMeetingPostListError from '../customExceptions/meetingPostListError';
+import GetMeetingContentError from '../customExceptions/meetingContentError';
 import { dateNotExpired } from './auxiliary/schedulingMeeting/schedulingMeetingAuxiliary';
 import {
   treatingPostsError,
