@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Text, View, TouchableOpacity, ScrollView, ActivityIndicator, Alert } from 'react-native';
 import InvitedCounselorsData from '../components/InvitedCounselorsData';
 import styles from '../Styles/SchedulingVisitStyles';
+import ShowEmail from './ShowEmail';
 
 class InviteAgent extends React.Component {
   constructor(props) {
@@ -49,23 +50,28 @@ class InviteAgent extends React.Component {
   }
 
   showAgentEmail() {
-    if (this.state.visit.agentEmail !== '') {
-      return (
-        <View>
-          <Text style={styles.TopListText}>Agente Convidado</Text>
-          <View style={styles.InputFieldStyle}>
-            <Text>{this.state.visit.agentEmail}</Text>
-          </View>
-        </View>
-      );
-    }
+    // if (this.state.visit.agentEmail !== '') {
+    //   return (
+    //     <View>
+    //       <Text style={styles.TopListText}>Agente Convidado</Text>
+    //       <View style={styles.InputFieldStyle}>
+    //         <Text>{this.state.visit.agentEmail}</Text>
+    //       </View>
+    //     </View>
+    //   );
+    // }
+    // return (
+    //   <View>
+    //     <Text style={styles.TopListText}>Agente Convidado</Text>
+    //     <View style={styles.InputFieldStyle}>
+    //       <Text style={styles.NoInvitedAgent}>Nenhum agente convidado</Text>
+    //     </View>
+    //   </View>
+    // );
     return (
-      <View>
-        <Text style={styles.TopListText}>Agente Convidado</Text>
-        <View style={styles.InputFieldStyle}>
-          <Text style={styles.NoInvitedAgent}>Nenhum agente convidado</Text>
-        </View>
-      </View>
+      <ShowEmail
+        agentEmail={this.state.agentEmail}
+      />
     );
   }
 
