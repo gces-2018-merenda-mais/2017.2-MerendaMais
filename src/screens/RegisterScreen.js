@@ -15,7 +15,7 @@ import { Actions } from 'react-native-router-flux';
 import Header from '../components/Header';
 import {
   REGISTER_FAIL_TITLE,
-} from '../constants/generalConstants';
+} from '../constants/alertTitlesMessages';
 import {
   EXECUTIVE_POWER,
   EDUCATION_WORKERS,

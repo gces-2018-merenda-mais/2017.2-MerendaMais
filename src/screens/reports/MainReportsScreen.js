@@ -14,12 +14,14 @@ import { Actions } from 'react-native-router-flux';
 import { logInfo, logWarn } from '../../../logConfig/loggers';
 import ShowToast from '../../components/Toast';
 import {
-  FINISH_INSPECTION,
-  LEAVING_INSPECTION,
-  INPECTION_ERROR,
   INTERNAL_ERROR,
   INSPECTION_SUCCEED,
 } from '../../constants/generalConstants';
+import {
+  FINISH_INSPECTION,
+  LEAVING_INSPECTION,
+  INPECTION_ERROR,
+} from '../../constants/alertTitlesMessages';
 import {
   UNAUDITED,
   YES,

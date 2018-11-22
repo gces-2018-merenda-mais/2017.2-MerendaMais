@@ -10,16 +10,17 @@ import {
 import { isLoading, isNotLoading, convertingJSONToString } from './applicationActions';
 import { logInfo, logWarn } from '../../logConfig/loggers';
 import {
-  USER_JUST_ALREADY_REGISTER_IN_NUVEM,
-  USER_ALREADY_REGISTER_IN_APPLICATION,
-  REGISTER_FAIL_TITLE,
-  AUTHENTICATE_LINK_NUVEM_CIVICA,
   LOGIN_SUCCEED,
   LOGIN_PASSWORD_ERROR,
   INTERNAL_ERROR,
   REGISTER_SUCCEED,
   REGISTER_NUVEM_ERROR,
 } from '../constants/generalConstants';
+import {
+  REGISTER_FAIL_TITLE,
+  USER_ALREADY_REGISTER_IN_APPLICATION,
+  USER_JUST_ALREADY_REGISTER_IN_NUVEM,
+} from '../constants/alertTitlesMessages';
 import {
   AUTHENTICATE_LINK_NUVEM_CIVICA,
   DEFAULT_USER_LINK_NUVEM_CIVICA,
