@@ -9,10 +9,12 @@ import {
   convertingContentStringToJSON,
 } from './applicationActions';
 import {
-  APP_IDENTIFIER,
   POSTS_LINK_NUVEM_CIVICA,
-  MEETING_POSTING_TYPE_CODE,
 } from '../constants/generalConstants';
+import { 
+  APP_IDENTIFIER,
+  MEETING_POSTING_TYPE_CODE,
+} from '../constants/codeNumbers';
 import { SET_MEETING_LOCATION_LONGITUDE, SET_MEETING_LOCATION_LATITUDE } from './types';
 import { resetList, setScheduleMeetingList } from './listActions';
 import GetMeetingPostListError from '../customExceptions/meetingPostListError';

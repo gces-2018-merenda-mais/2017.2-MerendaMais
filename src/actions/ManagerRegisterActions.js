@@ -6,7 +6,6 @@ import { Alert } from 'react-native';
 import { RESET_LIST } from './types';
 import { logInfo } from '../../logConfig/loggers';
 import {
-  APP_IDENTIFIER,
   AUTHENTICATE_LINK_NUVEM_CIVICA,
   DEFAULT_GROUP_LINK_NUVEM_CIVICA,
   DEFAULT_USER_LINK_NUVEM_CIVICA,
@@ -15,6 +14,7 @@ import {
   COUNSELOR_GROUP_DISABLED_SUCCESS,
   COUNSELOR_GROUP_DISABLED_FAILED,
 } from '../constants/generalConstants';
+import { APP_IDENTIFIER } from '../constants/codeNumbers';
 import { convertingJSONToString } from './applicationActions';
 import treatingError from './errorUtils';
 

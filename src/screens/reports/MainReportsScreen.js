@@ -15,8 +15,6 @@ import { logInfo, logWarn } from '../../../logConfig/loggers';
 import ShowToast from '../../components/Toast';
 import {
   POSTS_LINK_NUVEM_CIVICA,
-  APP_IDENTIFIER,
-  INSPECTION_POSTING_TYPE_CODE,
   FINISH_INSPECTION,
   LEAVING_INSPECTION,
   INPECTION_ERROR,
@@ -36,6 +34,10 @@ import {
   FOOD_PREPARATION,
   OTHER_OBSERVATION,
 } from '../../constants/generalConstants';
+import { 
+  APP_IDENTIFIER,
+  INSPECTION_POSTING_TYPE_CODE,
+} from '../../constants/codeNumbers';
 import {
   GET_CURRENT_SCHEDULE_ERROR,
   AFTER_INPECTION_POST_ERROR,
