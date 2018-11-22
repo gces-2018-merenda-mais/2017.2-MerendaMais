@@ -6,7 +6,7 @@ import PopupDialog, { DialogTitle, DialogButton } from 'react-native-popup-dialo
 import VisitCard from '../components/VisitCard';
 import Header from '../components/Header';
 import VisitInfoPopUp from '../components/VisitInfoPopUp';
-import { UNABLE_TO_FIND_SCHOOL } from '../constants/generalConstants';
+import { UNABLE_TO_FIND_SCHOOL } from '../constants/toastMessages';
 import { SCHOOL_ENDPOINT } from '../constants/linkConstants';
 import { logInfo, logWarn } from '../../logConfig/loggers';
 import ShowToast from '../components/Toast';

@@ -10,7 +10,7 @@ import { TouchableOpacity,
   KeyboardAvoidingView,
   BackHandler,
 } from 'react-native';
-import { WATER_SEWER_SUPPLY } from '../../constants/generalConstants';
+import { WATER_SEWER_SUPPLY } from '../../constants/checklistConstants';
 import Header from '../../components/Header';
 import styles from '../../Styles/GeneralStyles';
 import { backHandlerPop } from '../../NavigationFunctions';

@@ -10,7 +10,7 @@ import {
   COUNSELOR_DISABLED_FAILED,
   COUNSELOR_GROUP_DISABLED_SUCCESS,
   COUNSELOR_GROUP_DISABLED_FAILED,
-} from '../../src/constants/generalConstants';
+} from '../../src/constants/toastMessages';
 import {
   AUTHENTICATE_LINK_NUVEM_CIVICA,
   DEFAULT_USER_LINK_NUVEM_CIVICA,

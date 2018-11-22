@@ -10,7 +10,7 @@ import { TouchableOpacity,
   KeyboardAvoidingView,
   BackHandler,
 } from 'react-native';
-import { SCHOOL_SURROUNDINGS } from '../../constants/generalConstants';
+import { SCHOOL_SURROUNDINGS } from '../../constants/checklistConstants';
 import Header from '../../components/Header';
 import styles from '../../Styles/GeneralStyles';
 import { backHandlerPop } from '../../NavigationFunctions';

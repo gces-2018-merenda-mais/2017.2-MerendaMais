@@ -11,11 +11,13 @@ import { isLoading, isNotLoading, convertingJSONToString } from './applicationAc
 import { logInfo, logWarn } from '../../logConfig/loggers';
 import {
   LOGIN_SUCCEED,
-  LOGIN_PASSWORD_ERROR,
   INTERNAL_ERROR,
   REGISTER_SUCCEED,
   REGISTER_NUVEM_ERROR,
-} from '../constants/generalConstants';
+} from '../constants/toastMessages';
+import {
+  LOGIN_PASSWORD_ERROR,
+} from '../constants/toastMessages';
 import {
   REGISTER_FAIL_TITLE,
   USER_ALREADY_REGISTER_IN_APPLICATION,

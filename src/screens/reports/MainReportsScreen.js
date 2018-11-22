@@ -16,7 +16,7 @@ import ShowToast from '../../components/Toast';
 import {
   INTERNAL_ERROR,
   INSPECTION_SUCCEED,
-} from '../../constants/generalConstants';
+} from '../../constants/toastMessages';
 import {
   FINISH_INSPECTION,
   LEAVING_INSPECTION,

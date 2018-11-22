@@ -10,7 +10,7 @@ import {
   KITCHEN,
   FOOD_PREPARATION,
   OTHER_OBSERVATION,
-} from '../constants/generalConstants';
+} from '../constants/checklistConstants';
 import {
   POSTS_LINK_NUVEM_CIVICA,
 } from '../constants/linkConstants';

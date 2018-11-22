@@ -1,5 +1,5 @@
 import ShowToast from '../components/Toast';
-import INTERNAL_ERROR from '../constants/generalConstants';
+import INTERNAL_ERROR from '../constants/toastMessages';
 import { logWarn } from '../../logConfig/loggers';
 
 const FILE_NAME = 'editConselorError';

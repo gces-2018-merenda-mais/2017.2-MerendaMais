@@ -26,7 +26,7 @@ import municipalDistricts from '../constants/municipalDistricts';
 import {
   SCHOOL_NOT_FOUND,
   ERROR_FIND_SCHOOL 
-} from '../constants/generalConstants';
+} from '../constants/toastMessages';
 import {
   SCHOOL_ENDPOINT,
 } from '../constants/linkConstants';

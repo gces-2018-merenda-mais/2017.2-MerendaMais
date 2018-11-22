@@ -10,6 +10,7 @@ export const INTERNAL_ERROR = 'Erro interno. Tente novamente mais tarde!';
 
 export const SCHOOL_NOT_FOUND = 'Nenhuma escola encontrada! Verifique se foi digitado corretamente.';
 export const ERROR_FIND_SCHOOL = 'Erro ao procurar escola. Tente novamente mais tarde.';
+
 export const COUNSELOR_DISABLED_SUCCESS = 'Conselheiro desassociado com sucesso!';
 export const COUNSELOR_DISABLED_FAILED = 'Erro ao desassociar conselheiro da aplicação!';
 export const COUNSELOR_GROUP_DISABLED_SUCCESS = 'Conselheiro apagado do grupo (CAE) com sucesso!';

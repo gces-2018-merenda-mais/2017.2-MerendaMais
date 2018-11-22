@@ -12,7 +12,7 @@ import {
 import { Actions } from 'react-native-router-flux';
 import {
   EDIT_SUCCEED,
-} from '../constants/generalConstants';
+} from '../constants/toastMessages';
 import {
   EXECUTIVE_POWER,
   EDUCATION_WORKERS,
