@@ -1,6 +1,5 @@
 import axios from 'axios';
 import {
-  POSTS_LINK_NUVEM_CIVICA,
   DOCUMENTATION,
   SCHOOL_SURROUNDINGS,
   FOOD_STOCK,
@@ -12,6 +11,9 @@ import {
   FOOD_PREPARATION,
   OTHER_OBSERVATION,
 } from '../constants/generalConstants';
+import {
+  POSTS_LINK_NUVEM_CIVICA,
+} from '../constants/linkConstants';
 import { 
   APP_IDENTIFIER,
   INSPECTION_POSTING_TYPE_CODE,

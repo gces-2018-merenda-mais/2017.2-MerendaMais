@@ -13,7 +13,7 @@ import {
 } from './types';
 import {
   POSTS_LINK_NUVEM_CIVICA,
-} from '../constants/generalConstants';
+} from '../constants/linkConstants';
 import { 
   APP_IDENTIFIER,
   VISIT_POSTING_TYPE_CODE, 

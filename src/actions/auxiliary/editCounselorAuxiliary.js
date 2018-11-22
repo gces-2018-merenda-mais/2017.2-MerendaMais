@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { convertingJSONToString } from '../applicationActions';
 // Functions focused in Edit Couselor Data
-import { DEFAULT_USER_LINK_NUVEM_CIVICA } from '../../constants/generalConstants';
+import { DEFAULT_USER_LINK_NUVEM_CIVICA } from '../../constants/linkConstants';
 import { logInfo, logWarn } from '../../../logConfig/loggers';
 import { errorGenerator } from '../schedulingVisitActions';
 import { EDIT_PROFILE_ERROR, EDIT_ACCOUNT_ERROR } from '../../constants/errorConstants';

@@ -10,7 +10,7 @@ import {
 } from './applicationActions';
 import {
   POSTS_LINK_NUVEM_CIVICA,
-} from '../constants/generalConstants';
+} from '../constants/linkConstants';
 import { 
   APP_IDENTIFIER,
   MEETING_POSTING_TYPE_CODE,

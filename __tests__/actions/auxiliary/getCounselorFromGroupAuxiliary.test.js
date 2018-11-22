@@ -3,7 +3,7 @@ import MockAdapter from 'axios-mock-adapter';
 import {
   DEFAULT_GROUP_LINK_NUVEM_CIVICA,
   DEFAULT_USER_LINK_NUVEM_CIVICA,
-} from '../../../src/constants/generalConstants';
+} from '../../../src/constants/linkConstants';
 import {
   getCounselorFromGroup,
   getCounselor,

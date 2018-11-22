@@ -6,14 +6,16 @@ import { Alert } from 'react-native';
 import { RESET_LIST } from './types';
 import { logInfo } from '../../logConfig/loggers';
 import {
-  AUTHENTICATE_LINK_NUVEM_CIVICA,
-  DEFAULT_GROUP_LINK_NUVEM_CIVICA,
-  DEFAULT_USER_LINK_NUVEM_CIVICA,
   COUNSELOR_DISABLED_SUCCESS,
   COUNSELOR_DISABLED_FAILED,
   COUNSELOR_GROUP_DISABLED_SUCCESS,
   COUNSELOR_GROUP_DISABLED_FAILED,
 } from '../constants/generalConstants';
+import {
+  DEFAULT_GROUP_LINK_NUVEM_CIVICA,
+  AUTHENTICATE_LINK_NUVEM_CIVICA,
+  DEFAULT_USER_LINK_NUVEM_CIVICA,
+} from '../constants/linkConstants';
 import { APP_IDENTIFIER } from '../constants/codeNumbers';
 import { convertingJSONToString } from './applicationActions';
 import treatingError from './errorUtils';

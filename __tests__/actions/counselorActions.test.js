@@ -21,7 +21,7 @@ import {
 import {
   AUTHENTICATE_LINK_NUVEM_CIVICA,
   DEFAULT_USER_LINK_NUVEM_CIVICA,
-} from '../../src/constants/generalConstants';
+} from '../../src/constants/linkConstants';
 import { APP_IDENTIFIER } from '../../src/constants/codeNumbers';
 import {
   AUTH_LOGIN_ERROR,
