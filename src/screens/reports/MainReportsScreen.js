@@ -19,6 +19,8 @@ import {
   INPECTION_ERROR,
   INTERNAL_ERROR,
   INSPECTION_SUCCEED,
+} from '../../constants/generalConstants';
+import {
   UNAUDITED,
   YES,
   NO,
@@ -32,7 +34,7 @@ import {
   KITCHEN,
   FOOD_PREPARATION,
   OTHER_OBSERVATION,
-} from '../../constants/generalConstants';
+} from '../../constants/counselorConstants';
 import {
   POSTS_LINK_NUVEM_CIVICA,
 } from '../../constants/linkConstants';
