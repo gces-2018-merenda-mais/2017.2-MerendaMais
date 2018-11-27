@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const buttonBoxGreen = StyleSheet.create({
+export const buttonBoxGreen = StyleSheet.create({
     design: {
       borderColor: 'black',
       borderWidth: 1,
@@ -16,7 +16,7 @@ const buttonBoxGreen = StyleSheet.create({
     },
 });
   
-  const buttonBoxRed = StyleSheet.create({
+export const buttonBoxRed = StyleSheet.create({
     design: {
       borderColor: 'black',
       borderWidth: 1,
@@ -31,6 +31,3 @@ const buttonBoxGreen = StyleSheet.create({
       textAlign: 'center',
     },
 });
-
-export default buttonBoxGreen;
-export default buttonBoxRed;

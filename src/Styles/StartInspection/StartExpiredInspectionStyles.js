@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     principal: {
       flex: 1,
     },
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     },
 });
   
-const buttonBox = StyleSheet.create({
+export const buttonBox = StyleSheet.create({
     design: {
       borderColor: 'black',
       borderWidth: 1,
@@ -26,6 +26,3 @@ const buttonBox = StyleSheet.create({
       textAlign: 'center',
     },
 });
-
-export default styles;
-export default buttonBox;
