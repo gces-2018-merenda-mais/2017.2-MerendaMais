@@ -3,17 +3,18 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     principal: {
       flex: 1,
+      backgroundColor: 'white',
     },
   
     content: {
       flex: 6,
       paddingHorizontal: 18,
       backgroundColor: 'white',
-      justifyContent: 'center',
+      marginTop: 120,
     },
   
     footer: {
-      flex: 0.5,
+      flex: 0.23,
       borderTopColor: '#a9a9a9',
       borderTopWidth: 1,
       backgroundColor: 'white',
