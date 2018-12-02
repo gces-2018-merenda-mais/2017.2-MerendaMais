@@ -11,14 +11,16 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import {
-  TITULAR_COUNSELOR,
-  SURROGATE_COUNSELOR,
+  EDIT_SUCCEED,
+} from '../constants/toastMessages';
+import {
   EXECUTIVE_POWER,
   EDUCATION_WORKERS,
   STUDENT_PARENTS,
   CIVILIAN_ENTITIES,
-  EDIT_SUCCEED,
-} from '../constants/generalConstants';
+  TITULAR_COUNSELOR,
+  SURROGATE_COUNSELOR,
+} from '../constants/counselorConstants';
 import Header from '../components/Header';
 import { logInfo } from '../../logConfig/loggers';
 import DropdownComponent from '../components/DropdownComponent';

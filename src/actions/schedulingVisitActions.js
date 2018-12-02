@@ -12,10 +12,12 @@ import {
   SET_CURRENT_INSPECTION,
 } from './types';
 import {
-  APP_IDENTIFIER,
   POSTS_LINK_NUVEM_CIVICA,
-  VISIT_POSTING_TYPE_CODE,
-} from '../constants/generalConstants';
+} from '../constants/linkConstants';
+import { 
+  APP_IDENTIFIER,
+  VISIT_POSTING_TYPE_CODE, 
+} from '../constants/codeNumbers';
 import {
   setPendingScheduleList,
   setExpiredScheduleList,

@@ -23,11 +23,13 @@ import ShowToast from '../components/Toast';
 import SchoolListButton from '../components/SchoolListButton';
 import brazilianStates from '../constants/brazilianStates';
 import municipalDistricts from '../constants/municipalDistricts';
-
+import {
+  SCHOOL_NOT_FOUND,
+  ERROR_FIND_SCHOOL 
+} from '../constants/toastMessages';
 import {
   SCHOOL_ENDPOINT,
-  SCHOOL_NOT_FOUND,
-  ERROR_FIND_SCHOOL } from '../constants/generalConstants';
+} from '../constants/linkConstants';
 import { backHandlerPopToMain } from '../NavigationFunctions';
 import styles from '../Styles/SearchSchoolStyles'
 

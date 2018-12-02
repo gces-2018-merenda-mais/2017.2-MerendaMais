@@ -10,7 +10,7 @@ import { TouchableOpacity,
   KeyboardAvoidingView,
   BackHandler,
 } from 'react-native';
-import { REFECTORY } from '../../constants/generalConstants';
+import { REFECTORY } from '../../constants/checklistConstants';
 import Header from '../../components/Header';
 import styles from '../../Styles/GeneralStyles';
 import { backHandlerPop } from '../../NavigationFunctions';

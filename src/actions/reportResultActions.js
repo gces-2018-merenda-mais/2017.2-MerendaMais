@@ -1,8 +1,5 @@
 import axios from 'axios';
 import {
-  POSTS_LINK_NUVEM_CIVICA,
-  INSPECTION_POSTING_TYPE_CODE,
-  APP_IDENTIFIER,
   DOCUMENTATION,
   SCHOOL_SURROUNDINGS,
   FOOD_STOCK,
@@ -13,7 +10,14 @@ import {
   KITCHEN,
   FOOD_PREPARATION,
   OTHER_OBSERVATION,
-} from '../constants/generalConstants';
+} from '../constants/checklistConstants';
+import {
+  POSTS_LINK_NUVEM_CIVICA,
+} from '../constants/linkConstants';
+import { 
+  APP_IDENTIFIER,
+  INSPECTION_POSTING_TYPE_CODE,
+} from '../constants/codeNumbers';
 import {
   SET_CURRENT_REPORT_RESULT_FOOD_STOCKS,
   SET_CURRENT_REPORT_RESULT_DOC,

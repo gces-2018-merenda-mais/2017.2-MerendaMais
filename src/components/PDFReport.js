@@ -20,7 +20,7 @@ import {
   SECTIONS,
 } from '../constants/reportPDF';
 import replaceDiacritics from '../services/replaceDiacritics';
-import { LOADING_RESULT } from '../constants/generalConstants';
+import { LOADING_RESULT } from '../constants/toastMessages';
 
 
 const buttonBoxStyle = StyleSheet.create({
