@@ -5,6 +5,7 @@ import { Text, View, TouchableOpacity, ScrollView, ActivityIndicator, Alert } fr
 import InvitedCounselorsData from '../components/InvitedCounselorsData';
 import styles from '../Styles/SchedulingVisitStyles';
 import ShowEmail from './ShowEmail';
+import { LabeledField } from './LabeledField';
 
 class InviteAgent extends React.Component {
   constructor(props) {
@@ -187,18 +188,24 @@ class InviteAgent extends React.Component {
             onPress={() => this.manageInvitedListState(counselor)}
           >
             <View style={styles.textBox}>
-              <Text style={styles.text}>
-                <Text style={styles.ConsuelorInformation}>Nome: </Text>
-                {counselor.name}
-              </Text>
-              <Text style={styles.text}>
-                <Text style={styles.ConsuelorInformation}>CPF: </Text>
-                {counselor.profile.cpf}
-              </Text>
-              <Text style={styles.text}>
-                <Text style={styles.ConsuelorInformation}>Telefone: </Text>
-                {counselor.profile.phone}
-              </Text>
+              <LabeledField
+                label="Nome"
+                value={counselor.name}
+                wrapperStyle={styles.text}
+                labelStyle={styles.ConsuelorInformation}
+              />
+              <LabeledField
+                label="CPF"
+                value={counselor.profile.cpf}
+                wrapperStyle={styles.text}
+                labelStyle={styles.ConsuelorInformation}
+              />
+              <LabeledField
+                label="Telefone"
+                value={counselor.profile.phone}
+                wrapperStyle={styles.text}
+                labelStyle={styles.ConsuelorInformation}
+              />
             </View>
           </TouchableOpacity>
         </View>
