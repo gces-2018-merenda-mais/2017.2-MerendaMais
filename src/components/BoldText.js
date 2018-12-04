@@ -13,7 +13,8 @@ const BoldText = ({ data, label }) => (
   <View>
     <Text style={styles.text}>
       <Text style={{ fontWeight: 'bold' }}>
-        {label}:
+        {label}
+:
       </Text>
       {data}
     </Text>

@@ -38,7 +38,9 @@ export default class EmailField extends React.Component {
   };
 
   render() {
-    const { size, value, placeholder, onSubmitEditing, callback } = this.props;
+    const {
+      size, value, placeholder, onSubmitEditing, callback,
+    } = this.props;
     return (
       <View>
         <View style={this.setStyle()}>
@@ -49,10 +51,10 @@ export default class EmailField extends React.Component {
             placeholder={placeholder}
             placeholderTextColor="#95a5a6"
             underlineColorAndroid="transparent"
-            returnKeyLabel={'next'}
+            returnKeyLabel="next"
             maxLength={50}
-            keyboardType={'email-address'}
-            autoCapitalize={'none'}
+            keyboardType="email-address"
+            autoCapitalize="none"
             onChangeText={email => this.validateEmail(email, callback)}
             value={value}
             onSubmitEditing={() => onSubmitEditing()}
@@ -79,4 +81,3 @@ EmailField.defaultProps = {
   width: null,
   onSubmitEditing: () => (() => ({})),
 };
-

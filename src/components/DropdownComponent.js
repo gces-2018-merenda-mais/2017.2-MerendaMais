@@ -4,7 +4,7 @@ import { View, Picker } from 'react-native';
 import styles from '../Styles/GeneralStyles';
 import ErrorMessage from './ErrorMessage';
 
-export default class DropdownComponent extends React.Component{
+export default class DropdownComponent extends React.Component {
   state = {
     isValid: false,
     focused: false,
@@ -31,15 +31,18 @@ export default class DropdownComponent extends React.Component{
     }
 
     if (!valid) {
-      this.state.errorMessage = 'Por favor, selecione um ' + fieldName;
+      this.state.errorMessage = 'Por favor, selecione um ';
+      this.state.errorMessage += fieldName;
     }
-    
     callback(checkedAttribute, valid);
   };
 
   render() {
-    const { selectedValue, pickerBody, pickerTitle, fieldName, callback } = this.props;
-    return(
+    const {
+      selectedValue, pickerBody, pickerTitle, fieldName, callback,
+    } = this.props;
+
+    return (
       <View>
         <View style={this.setStyle()}>
           <Picker
@@ -50,19 +53,17 @@ export default class DropdownComponent extends React.Component{
             {pickerBody}
           </Picker>
         </View>
-      
+
         <ErrorMessage valid={this.state.isValid} errorText={this.state.errorMessage} />
       </View>
     );
   }
-
-  
 }
 
 DropdownComponent.propTypes = {
+  fieldName: PropTypes.string.isRequired,
   selectedValue: PropTypes.string.isRequired,
   callback: PropTypes.func.isRequired,
   pickerTitle: PropTypes.element.isRequired,
   pickerBody: PropTypes.element.isRequired,
 };
-

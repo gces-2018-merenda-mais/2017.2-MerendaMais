@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, TextInput, Text } from 'react-native';
+import { View, TextInput } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from '../Styles/GeneralStyles';
 import ErrorMessage from './ErrorMessage';
@@ -52,9 +52,9 @@ export default class CpfField extends React.Component {
             placeholder="Digite o seu CPF"
             placeholderTextColor="#95a5a6"
             underlineColorAndroid="transparent"
-            returnKeyLabel={'next'}
+            returnKeyLabel="next"
             maxLength={11}
-            keyboardType={'numeric'}
+            keyboardType="numeric"
             onChangeText={cpf => this.validateCpf(cpf, callback)}
             value={value}
             onFocus={() => this.setState({ focused: true })}

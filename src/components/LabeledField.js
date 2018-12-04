@@ -2,9 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 
-const LabeledField = ({ label, value, wrapperStyle, labelStyle }) => (
+const LabeledField = ({
+  label, value, wrapperStyle, labelStyle,
+}) => (
   <Text style={wrapperStyle}>
-    <Text style={labelStyle}>{ label }: </Text>
+    <Text style={labelStyle}>
+      { label }
+:
+      {' '}
+    </Text>
     { value }
   </Text>
 );

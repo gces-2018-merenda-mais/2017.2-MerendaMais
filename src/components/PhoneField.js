@@ -22,14 +22,14 @@ class PhoneField extends React.Component {
       }
     }
     return style;
-  };
+  }
 
   validatePhone = (phone, phoneValidated) => {
     const validPhone = phone.replace(/[^0-9]/g, '');
     phoneValidated(validPhone);
-    let valid = false
+    let valid = false;
 
-    if(phone.length >= 8) valid = true;
+    if (phone.length >= 8) valid = true;
 
     if (this.state.isValid !== valid) {
       this.setState({ isValid: valid });
@@ -40,9 +40,9 @@ class PhoneField extends React.Component {
     }
   };
 
-  render(){
+  render() {
     const { value, phoneValidated } = this.props;
-    return(
+    return (
       <View>
         <Text>Telefone</Text>
         <View style={this.setStyle()}>
@@ -52,9 +52,9 @@ class PhoneField extends React.Component {
             placeholder="Digite o seu telefone"
             placeholderTextColor="#95a5a6"
             underlineColorAndroid="transparent"
-            returnKeyLabel={'next'}
+            returnKeyLabel="next"
             maxLength={11}
-            keyboardType={'phone-pad'}
+            keyboardType="phone-pad"
             onChangeText={phone => this.validatePhone(phone, phoneValidated)}
             value={value}
             onFocus={() => this.setState({ focused: true })}
@@ -62,7 +62,7 @@ class PhoneField extends React.Component {
         </View>
         <ErrorMessage valid={this.state.isValid} errorText={this.state.errorMessage} />
       </View>
-    )
+    );
   }
 }
 

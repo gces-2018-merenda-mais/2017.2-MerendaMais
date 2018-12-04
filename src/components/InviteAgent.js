@@ -1,8 +1,10 @@
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, TouchableOpacity, ScrollView, ActivityIndicator, Alert } from 'react-native';
-import InvitedCounselorsData from '../components/InvitedCounselorsData';
+import {
+  Text, View, TouchableOpacity, ScrollView, ActivityIndicator, Alert,
+} from 'react-native';
+import InvitedCounselorsData from './InvitedCounselorsData';
 import styles from '../Styles/SchedulingVisitStyles';
 import ShowEmail from './ShowEmail';
 import { LabeledField } from './LabeledField';
@@ -27,6 +29,7 @@ class InviteAgent extends React.Component {
       enabled: true,
     };
   }
+
   invitingAgent(popupDialogAgent) {
     const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -37,7 +40,8 @@ class InviteAgent extends React.Component {
         [
           { text: 'Ok', onPress: () => { }, style: 'cancel' },
         ],
-        { cancelable: false });
+        { cancelable: false },
+      );
     } else {
       this.setState({ visit: { ...this.state.visit, invitedAgent: true } });
       popupDialogAgent.dismiss();
