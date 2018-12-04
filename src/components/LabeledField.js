@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
 
 const LabeledField = ({ label, value, wrapperStyle, labelStyle }) => (
   <Text style={wrapperStyle}>
