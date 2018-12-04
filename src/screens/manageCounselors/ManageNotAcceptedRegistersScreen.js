@@ -13,7 +13,7 @@ import LoadingIndicator from '../../components/LoadingIndicator';
 import Button from '../../components/Button';
 import { getManagerCounselorData } from '../../services/extractDataCounselor';
 import ScheduleCard from '../../components/ScheduleCard';
-import { buttonBoxGreen, buttonBoxRed} from '../../Styles/ManageConselors/ManageNotAcceptedRegistersStyles'
+import { buttonBoxGreen, buttonBoxRed } from '../../Styles/ManageConselors/ManageNotAcceptedRegistersStyles';
 
 export default class ManageNotAcceptedRegistersScreen extends React.Component {
   componentWillMount() {
@@ -55,7 +55,8 @@ export default class ManageNotAcceptedRegistersScreen extends React.Component {
             this.getCounselorFromGroup();
           },
         },
-      ]);
+      ],
+    );
   }
 
   arrayRegistersList() {
@@ -63,7 +64,7 @@ export default class ManageNotAcceptedRegistersScreen extends React.Component {
       return (
         LoadingIndicator
       );
-    } else if (this.props.listOfNotCheckedCounselors.length === 0) {
+    } if (this.props.listOfNotCheckedCounselors.length === 0) {
       return (
         <View style={stylesList.noneScheduleTextBox}>
           <Text style={stylesList.noneScheduleText}>Nenhum Conselheiro Não Validado!</Text>
@@ -105,7 +106,9 @@ export default class ManageNotAcceptedRegistersScreen extends React.Component {
   }
 }
 
-const { shape, string, number, bool } = PropTypes;
+const {
+  shape, string, number, bool,
+} = PropTypes;
 
 ManageNotAcceptedRegistersScreen.propTypes = {
   application: PropTypes.bool.isRequired,

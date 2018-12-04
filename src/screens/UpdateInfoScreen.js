@@ -30,7 +30,7 @@ import ShowToast from '../components/Toast';
 import { EDIT_ACCOUNT_ERROR, EDIT_PROFILE_ERROR } from '../constants/errorConstants';
 import editConselorErrorHandler from '../customErrorTreatments/userProfileInLoginError';
 import { backHandlerPop } from '../NavigationFunctions';
-import styles from '../Styles/UpdateInfoScreenStyles'
+import styles from '../Styles/UpdateInfoScreenStyles';
 
 const FILE_NAME = 'UpdateInfoScreen.js';
 
@@ -159,15 +159,13 @@ export default class UpdateInfoScreen extends React.Component {
               <Text>Telefone</Text>
               <PhoneField
                 value={this.state.phone}
-                callback={validPhone =>
-                  this.setState({ phone: validPhone })}
+                callback={validPhone => this.setState({ phone: validPhone })}
               />
 
               <Text>Tipo de Conselheiro</Text>
               <DropdownComponent
                 selectedValue={this.state.counselorType}
-                callback={counselorTypeChecked =>
-                  this.setState({ counselorType: counselorTypeChecked })}
+                callback={counselorTypeChecked => this.setState({ counselorType: counselorTypeChecked })}
                 pickerTitle={[
                   <Picker.Item value="" label="Escolha seu cargo" color="#95a5a6" />,
                 ]}
@@ -208,7 +206,7 @@ export default class UpdateInfoScreen extends React.Component {
 
       <View style={styles.principal}>
         <Header
-          title={'Editar Informações'}
+          title="Editar Informações"
         />
 
         {activityIndicatorOrScreen}
@@ -218,7 +216,9 @@ export default class UpdateInfoScreen extends React.Component {
   }
 }
 
-const { shape, string, number, bool } = PropTypes;
+const {
+  shape, string, number, bool,
+} = PropTypes;
 
 UpdateInfoScreen.propTypes = {
   asyncEditCounselor: PropTypes.func.isRequired,

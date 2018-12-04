@@ -19,7 +19,7 @@ import { getCounselorDataWithEmail } from '../services/extractDataCounselor';
 import ScheduleCard from '../components/ScheduleCard';
 import getMeetingData from '../services/extractDataMeeting';
 import Button from '../components/Button';
-import {styles, buttonBoxStyle} from '../Styles/MeetingInvitesStyles'
+import { styles, buttonBoxStyle } from '../Styles/MeetingInvitesStyles';
 
 class MeetingInvites extends React.Component {
   constructor(props) {
@@ -68,7 +68,7 @@ class MeetingInvites extends React.Component {
       return (
         <ActivityIndicator style={{ marginTop: 50 }} size="large" color="#FF9500" />
       );
-    } else if (this.props.listOfScheduleMeetingInAGroup.length === 0) {
+    } if (this.props.listOfScheduleMeetingInAGroup.length === 0) {
       return (
         <View style={stylesList.noneScheduleTextBox}>
           <Text style={stylesList.noneScheduleText}>Nenhuma Reunião Pendente!</Text>
@@ -156,8 +156,8 @@ class MeetingInvites extends React.Component {
     return (
       <View style={styles.principal}>
         <Header
-          title={'Notificações'}
-          subTitle={'Reunião'}
+          title="Notificações"
+          subTitle="Reunião"
         />
         <PopupDialog
           /* Popup para mostrar as informações da reunião */
@@ -185,7 +185,10 @@ class MeetingInvites extends React.Component {
                 {
                   getMeetingData(this.state.meetingSchedule).map(item => (
                     <Text style={styles.text}>
-                      <Text style={{ fontWeight: 'bold' }}>{item.label} </Text>
+                      <Text style={{ fontWeight: 'bold' }}>
+                        {item.label}
+                        {' '}
+                      </Text>
                       {item.value}
                     </Text>
                   ))

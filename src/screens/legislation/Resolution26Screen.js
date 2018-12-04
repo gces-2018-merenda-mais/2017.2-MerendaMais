@@ -20,7 +20,7 @@ import {
   ANEXOS,
 } from '../../constants/legislation/resolutionNumber26';
 import { backHandlerPop } from '../../NavigationFunctions';
-import styles from '../../Styles/LegislationStyles/Resolution26ScreenStyles'
+import styles from '../../Styles/LegislationStyles/Resolution26ScreenStyles';
 
 export default class Resolution26Screen extends Component {
   state = {
@@ -49,8 +49,8 @@ export default class Resolution26Screen extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: 'white', paddingBottom: 20 }}>
         <Header
-          title={'Legislação'}
-          subTitle={'Resolução Nº 26'}
+          title="Legislação"
+          subTitle="Resolução Nº 26"
         />
         <ScrollView
           horizontal

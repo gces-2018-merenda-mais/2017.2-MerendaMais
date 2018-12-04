@@ -4,7 +4,8 @@ import {
   Text,
   View,
   ImageBackground,
-  TouchableOpacity } from 'react-native';
+  TouchableOpacity,
+} from 'react-native';
 import styles from '../Styles/InitialScreenStyles';
 
 const initialBackgroundImage = require('../images/initial_background.jpg');

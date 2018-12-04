@@ -7,7 +7,7 @@ import StartExpiredInspectionContainer from '../../Containers/startInspection/St
 import Header from '../../components/Header';
 import StartAlreadyInspectionedInspectionContainer from '../../Containers/startInspection/StartAlreadyInspectionedInspectionContainer';
 import { backHandlerPop } from '../../NavigationFunctions';
-import styles from '../../Styles/StartInspection/PrincipalStartInspectionStyles'
+import styles from '../../Styles/StartInspection/PrincipalStartInspectionStyles';
 
 export default class Principal extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ export default class Principal extends Component {
 
   renderFooter = props => <TabBar style={{ backgroundColor: '#FF9500', borderTopWidth: 1, borderBottomColor: 'black' }} tabStyle={{ paddingHorizontal: -0 }} {...props} />;
 
-  renderHeader = props => <Header title={'Visitas Agendadas'} {...props} onPress={() => Actions.popTo('mainScreen')} />
+  renderHeader = props => <Header title="Visitas Agendadas" {...props} onPress={() => Actions.popTo('mainScreen')} />
 
   renderScene = SceneMap({
     first: StartPendingInspectionContainer,

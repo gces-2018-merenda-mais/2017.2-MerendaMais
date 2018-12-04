@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import openMap from 'react-native-open-maps';
-import { Alert, ActivityIndicator, Text, TextInput, View, TouchableOpacity, Dimensions, KeyboardAvoidingView, ScrollView, BackHandler } from 'react-native';
+import {
+  Alert, ActivityIndicator, Text, TextInput, View, TouchableOpacity, Dimensions, KeyboardAvoidingView, ScrollView, BackHandler,
+} from 'react-native';
 import PopupDialog, {
   DialogTitle,
   DialogButton,
@@ -13,7 +15,7 @@ import InvitedCounselorsData from '../../components/InvitedCounselorsData';
 import Button from '../../components/Button';
 import { backHandlerPopToMain } from '../../NavigationFunctions';
 import Header from '../../components/Header';
-import styles from '../../Styles/ScheduleMeetingStyles'
+import styles from '../../Styles/ScheduleMeetingStyles';
 
 export default class ScheduleMeeting extends React.Component {
   constructor(props) {
@@ -277,7 +279,7 @@ export default class ScheduleMeeting extends React.Component {
           </ScrollView>
         </PopupDialog>
         <Header
-          title={'Agendar Reunião'}
+          title="Agendar Reunião"
           onPress={() => Actions.popTo('mainScreen')}
         />
         <KeyboardAvoidingView style={styles.content} behavior="padding">
@@ -353,7 +355,8 @@ export default class ScheduleMeeting extends React.Component {
                 <View style={styles.textBoxDescription}>
                   <TextInput
                     onChangeText={meetingDescription => this.setState(
-                      { meeting: { ...this.state.meeting, meetingDescription } })}
+                      { meeting: { ...this.state.meeting, meetingDescription } },
+                    )}
                     style={styles.textInput}
                     value={this.state.meetingDescription}
                     maxLength={250}
@@ -372,7 +375,9 @@ export default class ScheduleMeeting extends React.Component {
   }
 }
 
-const { shape, string, number, func, bool } = PropTypes;
+const {
+  shape, string, number, func, bool,
+} = PropTypes;
 
 ScheduleMeeting.propTypes = {
   isLoading: PropTypes.bool.isRequired,

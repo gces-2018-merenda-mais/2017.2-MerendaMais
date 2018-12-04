@@ -25,13 +25,13 @@ import brazilianStates from '../constants/brazilianStates';
 import municipalDistricts from '../constants/municipalDistricts';
 import {
   SCHOOL_NOT_FOUND,
-  ERROR_FIND_SCHOOL 
+  ERROR_FIND_SCHOOL,
 } from '../constants/toastMessages';
 import {
   SCHOOL_ENDPOINT,
 } from '../constants/linkConstants';
 import { backHandlerPopToMain } from '../NavigationFunctions';
-import styles from '../Styles/SearchSchoolStyles'
+import styles from '../Styles/SearchSchoolStyles';
 
 const FILE_NAME = 'SearchSchool.js';
 
@@ -165,8 +165,8 @@ class SearchSchool extends React.Component {
   }
 
   buttonActivation() {
-    if ((this.state.name > '' && this.state.uf > '') ||
-    ((this.state.city !== 'Brasília' && this.state.city > '') && this.state.uf > '')) {
+    if ((this.state.name > '' && this.state.uf > '')
+    || ((this.state.city !== 'Brasília' && this.state.city > '') && this.state.uf > '')) {
       if (this.state.isLoading) {
         return (
           <ActivityIndicator
@@ -216,8 +216,7 @@ class SearchSchool extends React.Component {
           selectedValue={this.state.city}
         >
           <Picker.Item value="" label="Escolha o Municipio" color="#95a5a6" />
-          {municipalDistricts[UfInitials].cidades.map(item =>
-            (<Picker.Item label={item} value={item} key={item} color="#000000" />))}
+          {municipalDistricts[UfInitials].cidades.map(item => (<Picker.Item label={item} value={item} key={item} color="#000000" />))}
         </Picker>
       </View>
     ) : null;
@@ -226,7 +225,7 @@ class SearchSchool extends React.Component {
 
       <View style={styles.searchSchoolScreen}>
         <Header
-          title={'Pesquisar Escola'}
+          title="Pesquisar Escola"
           onPress={() => Actions.popTo('mainScreen')}
         />
         <KeyboardAvoidingView style={styles.content} behavior="padding">
@@ -244,14 +243,13 @@ class SearchSchool extends React.Component {
                 >
                   <Picker
                     onValueChange={uf => (
-                      uf === 'DF - Distrito Federal' ?
-                        this.setState({
+                      uf === 'DF - Distrito Federal'
+                        ? this.setState({
                           ...this.state,
                           uf,
                           city: 'Brasília',
                         })
-                        :
-                        this.setState({
+                        : this.setState({
                           ...this.state,
                           uf,
                           city: '',
@@ -276,7 +274,7 @@ class SearchSchool extends React.Component {
                     width={280}
                     returnKeyType="go"
                     maxLength={50}
-                    keyboardType={'default'}
+                    keyboardType="default"
                     onChangeText={text => this.validateName(text)}
                     value={this.state.name}
                     underlineColorAndroid="transparent"
@@ -288,7 +286,7 @@ class SearchSchool extends React.Component {
 
               {this.showFlatList()}
 
-              <View key="renderButton" style={styles.buttonArea} >
+              <View key="renderButton" style={styles.buttonArea}>
                 {this.buttonActivation()}
               </View>
             </View>
@@ -299,7 +297,9 @@ class SearchSchool extends React.Component {
   }
 }
 
-const { shape, string, number, bool, func } = PropTypes;
+const {
+  shape, string, number, bool, func,
+} = PropTypes;
 
 SearchSchool.propTypes = {
   setSchoolInfo: func.isRequired,

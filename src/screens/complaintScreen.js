@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, ScrollView, BackHandler } from 'react-native';
+import {
+  View, Text, ScrollView, BackHandler,
+} from 'react-native';
 import Hyperlink from 'react-native-hyperlink';
 import Header from '../components/Header';
 import * as constant from '../constants/publicAgencyInformations';
@@ -19,7 +21,7 @@ class complaintScreen extends React.PureComponent {
     return (
       <View style={styles.complaintScreen}>
         <Header
-          title={'Denunciar'}
+          title="Denunciar"
         />
         <ScrollView>
           <Hyperlink linkDefault linkStyle={{ color: '#2980b9' }}>

@@ -17,7 +17,7 @@ import {
   RESOLUTION_1_DATE,
 } from '../../constants/legislation/resolutionNumber1';
 import { backHandlerPop } from '../../NavigationFunctions';
-import styles from '../../Styles/LegislationStyles/Resolution1ScreenStyles'
+import styles from '../../Styles/LegislationStyles/Resolution1ScreenStyles';
 
 export default class Resolution1Screen extends Component {
   state = {
@@ -46,8 +46,8 @@ export default class Resolution1Screen extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>
         <Header
-          title={'Legislação'}
-          subTitle={'Resolução Nº 1'}
+          title="Legislação"
+          subTitle="Resolução Nº 1"
         />
         <ScrollView
           horizontal
