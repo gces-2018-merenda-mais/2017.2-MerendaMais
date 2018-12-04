@@ -14,7 +14,7 @@ import * as constant from '../constants/sendAgentEmail';
 import { backHandlerPopToMain } from '../NavigationFunctions';
 import Header from '../components/Header';
 import ShowToast from '../components/Toast';
-import { NO_OTHER_COUNSELORS } from '../constants/generalConstants';
+import { NO_OTHER_COUNSELORS } from '../constants/toastMessages';
 import styles from '../Styles/SchedulingVisitStyles';
 import InviteAgent from '../components/InviteAgent';
 

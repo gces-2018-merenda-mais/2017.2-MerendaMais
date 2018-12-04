@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     principal: {
       flex: 1,
     },
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
 });
   
   
-const buttonInviteesStyle = StyleSheet.create({
+export const buttonInviteesStyle = StyleSheet.create({
     design: {
       borderColor: 'black',
       borderWidth: 0.8,
@@ -111,7 +111,7 @@ const buttonInviteesStyle = StyleSheet.create({
     },
 });
   
-const buttonBoxStyle = StyleSheet.create({
+export const buttonBoxStyle = StyleSheet.create({
     design: {
       borderColor: 'black',
       borderWidth: 0.8,
@@ -130,7 +130,7 @@ const buttonBoxStyle = StyleSheet.create({
     },
 });
   
-const buttonBoxStyleNotInvitee = StyleSheet.create({
+export const buttonBoxStyleNotInvitee = StyleSheet.create({
     design: {
       borderColor: 'black',
       borderWidth: 0.8,
@@ -149,7 +149,7 @@ const buttonBoxStyleNotInvitee = StyleSheet.create({
     },
 });
   
-const buttonBoxStyleNotConfirm = StyleSheet.create({
+export const buttonBoxStyleNotConfirm = StyleSheet.create({
     design: {
       borderColor: 'black',
       borderWidth: 0.8,
@@ -166,9 +166,3 @@ const buttonBoxStyleNotConfirm = StyleSheet.create({
       textAlign: 'center',
     },
 });
-
-export default styles;
-export default buttonBoxStyle;
-export default buttonInviteesStyle;
-export default buttonBoxStyleNotConfirm;
-export default buttonBoxStyleNotInvitee;

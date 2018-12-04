@@ -1,7 +1,7 @@
 import * as Toast from '../src/components/Toast';
 import editConselorErrorHandler from '../src/customErrorTreatments/editConselorError';
 import getUserProfileInLoginErrorHandler from '../src/customErrorTreatments/userProfileInLoginError';
-import { LOGIN_PROFILE_ERROR } from '../src/constants/generalConstants';
+import { LOGIN_PROFILE_ERROR } from '../src/constants/toastMessages';
 
 const errorNumbers = [401, 403, 404, 500];
 

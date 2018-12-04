@@ -15,17 +15,19 @@ import { Actions } from 'react-native-router-flux';
 import Header from '../components/Header';
 import {
   REGISTER_FAIL_TITLE,
+} from '../constants/alertTitlesMessages';
+import {
+  EXECUTIVE_POWER,
+  EDUCATION_WORKERS,
+  STUDENT_PARENTS,
+  CIVILIAN_ENTITIES,
   TITULAR_COUNSELOR,
   SURROGATE_COUNSELOR,
   MUNICIPAL_COUNSELOR_CAE,
   STATE_COUNSELOR_CAE,
   PRESIDENT_COUNSELOR,
   COMMON_COUNSELOR,
-  EXECUTIVE_POWER,
-  EDUCATION_WORKERS,
-  STUDENT_PARENTS,
-  CIVILIAN_ENTITIES,
-} from '../constants/generalConstants';
+} from '../constants/counselorConstants';
 import { logInfo } from '../../logConfig/loggers';
 import brazilianStates from '../constants/brazilianStates';
 import CpfField from '../components/CpfField';
