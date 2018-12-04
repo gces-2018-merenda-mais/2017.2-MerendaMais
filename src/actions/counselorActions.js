@@ -28,8 +28,8 @@ import {
   DEFAULT_USER_LINK_NUVEM_CIVICA,
   DEFAULT_GROUP_LINK_NUVEM_CIVICA,
 } from '../constants/linkConstants';
-import { 
-  APP_IDENTIFIER, 
+import {
+  APP_IDENTIFIER,
   PROFILE_TYPE_CODE,
 } from '../constants/codeNumbers';
 import ShowToast from '../components/Toast';

@@ -11,7 +11,7 @@ import {
 import {
   POSTS_LINK_NUVEM_CIVICA,
 } from '../constants/linkConstants';
-import { 
+import {
   APP_IDENTIFIER,
   MEETING_POSTING_TYPE_CODE,
 } from '../constants/codeNumbers';

@@ -14,9 +14,9 @@ import {
 import {
   POSTS_LINK_NUVEM_CIVICA,
 } from '../constants/linkConstants';
-import { 
+import {
   APP_IDENTIFIER,
-  VISIT_POSTING_TYPE_CODE, 
+  VISIT_POSTING_TYPE_CODE,
 } from '../constants/codeNumbers';
 import {
   setPendingScheduleList,
