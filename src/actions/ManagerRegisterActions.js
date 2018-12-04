@@ -120,7 +120,8 @@ export const disableCounselorFromGroup = (counselor, codGroup, MASTER_TOKEN) => 
   return new Promise((resolve, reject) => {
     axios.delete(
       `${DEFAULT_GROUP_LINK_NUVEM_CIVICA}${codGroup}/membros/${counselor.codMembro}`,
-      disableGroupHeader)
+      disableGroupHeader,
+    )
       .then((response) => {
         logInfo(FILE_NAME, 'disableCounselorFromApp',
           ` Disable from group response: ${JSON.stringify(response.status)}`);

@@ -31,8 +31,7 @@ export const FILE_NAME = 'schedulingMeetingActions.js';
 const defineMeetingStatus = (meetingSchedule, counselor, dispatch) => {
   logInfo(FILE_NAME, 'defineMeetingStatus', `${JSON.stringify(meetingSchedule)}`);
 
-  const counselorInvited =
-    meetingSchedule.content.meetingListOfInvitees[counselor.nuvemCode] !== undefined;
+  const counselorInvited = meetingSchedule.content.meetingListOfInvitees[counselor.nuvemCode] !== undefined;
   const validMeeting = !dateNotExpired(meetingSchedule);
 
   if (counselorInvited && validMeeting) {
@@ -111,9 +110,9 @@ export const asyncGetScheduleMeeting = counselor => async (dispatch) => {
   };
 
   try {
-    const meetingSchedulePostList =
-      await meetingScheduleActionsAuxiliary.getMeetingPostList(
-        getScheduleMeetingParamsAndHeader);
+    const meetingSchedulePostList = await meetingScheduleActionsAuxiliary.getMeetingPostList(
+      getScheduleMeetingParamsAndHeader,
+    );
 
     const meetingScheduleContentList = [];
     // Get the content for each meeting schedule post in list and organize then.
@@ -122,7 +121,8 @@ export const asyncGetScheduleMeeting = counselor => async (dispatch) => {
         meetingScheduleActionsAuxiliary.getMeetingContent(
           meetingSchedulePostList.data[i].conteudos[0].links[0].href,
           counselor,
-          dispatch),
+          dispatch,
+        ),
       );
     }
 

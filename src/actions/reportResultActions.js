@@ -247,10 +247,7 @@ export const asyncGetCurrentPost = getData => async (dispatch) => {
   };
   try {
     const response = await axios.get(POSTS_LINK_NUVEM_CIVICA, header);
-    return Promise.all(response.data[0].conteudos.map(item =>
-      getContentInPost(getData, item, dispatch),
-    ),
-    );
+    return Promise.all(response.data[0].conteudos.map(item => getContentInPost(getData, item, dispatch)));
   } catch (error) {
     logWarn(FILE_NAME, 'reportResult',
       `Request result in an ${error}`);
