@@ -16,13 +16,13 @@ import stylesList from '../../Styles/ListStyles';
 import ScheduleCard from '../../components/ScheduleCard';
 import Button from '../../components/Button';
 import { getVisitData, getCounselorData } from '../../services/extractDataInspection';
-import { 
-  styles, 
-  buttonBoxStyle, 
+import {
+  styles,
+  buttonBoxStyle,
   buttonBoxStyleNotConfirm,
   buttonBoxStyleNotInvitee,
-  buttonInviteesStyle
-} from '../../Styles/StartInspection/StartPendingInspectionStyles'
+  buttonInviteesStyle,
+} from '../../Styles/StartInspection/StartPendingInspectionStyles';
 
 class StartPendingInspection extends React.Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class StartPendingInspection extends React.Component {
       return (
         <ActivityIndicator style={{ marginTop: 50 }} size="large" color="#FF9500" />
       );
-    } else if (this.props.listOfPendingScheduleInAGroup.length === 0) {
+    } if (this.props.listOfPendingScheduleInAGroup.length === 0) {
       return (
         <View style={stylesList.noneScheduleTextBox}>
           <Text style={stylesList.noneScheduleText}>Nenhum Agendamento Pendente!</Text>
@@ -63,7 +63,8 @@ class StartPendingInspection extends React.Component {
             {
               this.renderPaticipantsButton(
                 visitSchedule,
-                Object.keys(visitSchedule.content.visitListOfInvitees).length)
+                Object.keys(visitSchedule.content.visitListOfInvitees).length,
+              )
             }
           </View>
         </ScheduleCard>
@@ -81,7 +82,7 @@ class StartPendingInspection extends React.Component {
           onPress={() => { }}
         />
       );
-    } else if (!visitListOfInvitees[this.props.counselor.nuvemCode].confirmed) {
+    } if (!visitListOfInvitees[this.props.counselor.nuvemCode].confirmed) {
       return (
         <Button
           style={buttonBoxStyleNotConfirm}
@@ -131,15 +132,14 @@ class StartPendingInspection extends React.Component {
   renderPaticipantsButton(visitSchedule, numberOfParticipants) {
     console.log(visitSchedule);
     let participantsButton;
-    if (numberOfParticipants > 1 ||
-      !visitSchedule.content.visitListOfInvitees[this.props.counselor.nuvemCode] !== undefined) {
+    if (numberOfParticipants > 1
+      || !visitSchedule.content.visitListOfInvitees[this.props.counselor.nuvemCode] !== undefined) {
       participantsButton = (
         <Button
           style={buttonInviteesStyle}
           text="PARTICIPANTES"
           enabled
-          onPress={() =>
-            this.mountvisitListOfInvitees(visitSchedule.content.visitListOfInvitees)}
+          onPress={() => this.mountvisitListOfInvitees(visitSchedule.content.visitListOfInvitees)}
         />
       );
     }

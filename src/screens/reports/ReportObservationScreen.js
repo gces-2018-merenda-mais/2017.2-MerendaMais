@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Actions } from 'react-native-router-flux';
-import { TouchableOpacity,
+import {
+  TouchableOpacity,
   Text,
   View,
   ScrollView,
@@ -32,7 +33,7 @@ export default class ReportObservationScreen extends React.Component {
     return (
       <View style={styles.checklist.principal}>
         <Header
-          title={'Lista de verificação'}
+          title="Lista de verificação"
           subTitle={`+ ${OTHER_OBSERVATION}`}
         />
         <KeyboardAvoidingView style={styles.checklist.content} behavior="padding">
@@ -40,7 +41,9 @@ export default class ReportObservationScreen extends React.Component {
             <View behavior="padding">
               <Text
                 style={styles.checklist.observationText}
-              >Alguma observação adicional? Insira aqui. (Opcional)</Text>
+              >
+Alguma observação adicional? Insira aqui. (Opcional)
+              </Text>
               <View style={styles.checklist.observationBox}>
                 <TextInput
                   onChangeText={text => this.props.setReportObservation(text)}
@@ -55,8 +58,7 @@ export default class ReportObservationScreen extends React.Component {
 
             <TouchableOpacity
               style={styles.checklist.buttonContainer}
-              onPress={() =>
-                this.concludeReport()
+              onPress={() => this.concludeReport()
               }
               key="setObservation"
             >

@@ -2,13 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import openMap from 'react-native-open-maps';
 import PropTypes from 'prop-types';
-import { View, Text, TouchableOpacity, ScrollView, BackHandler } from 'react-native';
+import {
+  View, Text, TouchableOpacity, ScrollView, BackHandler,
+} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { SCHOOL_ENDPOINT } from '../constants/linkConstants';
 import { logInfo, logWarn } from '../../logConfig/loggers';
 import Header from '../components/Header';
 import { backHandlerPop } from '../NavigationFunctions';
-import styles from '../Styles/SchoolInfoScreenStyles'
+import styles from '../Styles/SchoolInfoScreenStyles';
 
 const FILE_NAME = 'SchoolInfoScreen.js';
 
@@ -72,7 +74,8 @@ class SchoolInfoScreen extends React.Component {
             schoolLat: response.data.latitude,
             schoolLong: response.data.longitude,
             schoolStudents,
-          });
+          },
+        );
       })
       .catch((error) => {
         logWarn(FILE_NAME, 'componentWillMount', error);
@@ -121,8 +124,8 @@ class SchoolInfoScreen extends React.Component {
   }
 
   showScheduleVisitButton() {
-    if (this.props.school.uf === this.props.counselor.profile.CAE ||
-      `${this.props.school.city} - ${this.props.school.uf}` === this.props.counselor.profile.CAE) {
+    if (this.props.school.uf === this.props.counselor.profile.CAE
+      || `${this.props.school.city} - ${this.props.school.uf}` === this.props.counselor.profile.CAE) {
       return (
         <View>
           <TouchableOpacity
@@ -154,7 +157,7 @@ class SchoolInfoScreen extends React.Component {
     return (
       <View style={styles.schoolInfoScreen}>
         <Header
-          title={'Informações da Escola'}
+          title="Informações da Escola"
         />
         <ScrollView>
           <Text style={styles.text}>Infomações</Text>
@@ -190,7 +193,9 @@ class SchoolInfoScreen extends React.Component {
   }
 }
 
-const { shape, func, number, string } = PropTypes;
+const {
+  shape, func, number, string,
+} = PropTypes;
 
 SchoolInfoScreen.propTypes = {
   setSchoolInfo: func.isRequired,

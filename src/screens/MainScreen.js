@@ -3,12 +3,13 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import styles from '../Styles/MainScreenStyles'
+import styles from '../Styles/MainScreenStyles';
 
 class MainScreen extends React.Component {
   componentWillMount() {
     this.props.resetStore('list', 'report', 'school');
   }
+
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>

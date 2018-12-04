@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import ManageNotAcceptedRegistersScreenContainer from '../../Containers/manageCounselors/ManageNotAcceptedRegistersScreenContainer';
 import ManageAcceptedRegistersScreenContainer from '../../Containers/manageCounselors/ManageAcceptedRegistersScreenContainer';
 import { backHandlerPopToMain } from '../../NavigationFunctions';
-import styles from '../../Styles/ManageConselors/PrincipalManageRegisterStyles'
+import styles from '../../Styles/ManageConselors/PrincipalManageRegisterStyles';
 
 export default class Principal extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export default class Principal extends Component {
 
   renderFooter = props => <TabBar style={{ backgroundColor: '#FF9500', borderTopWidth: 1, borderBottomColor: 'black' }} tabStyle={{ paddingHorizontal: -0 }} {...props} />;
 
-  renderHeader = props => <Header title={'Gerenciar Registro'} {...props} />
+  renderHeader = props => <Header title="Gerenciar Registro" {...props} />
 
   renderScene = SceneMap({
     first: ManageNotAcceptedRegistersScreenContainer,

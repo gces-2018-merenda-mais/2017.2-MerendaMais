@@ -28,8 +28,8 @@ import {
   DEFAULT_USER_LINK_NUVEM_CIVICA,
   DEFAULT_GROUP_LINK_NUVEM_CIVICA,
 } from '../constants/linkConstants';
-import { 
-  APP_IDENTIFIER, 
+import {
+  APP_IDENTIFIER,
   PROFILE_TYPE_CODE,
 } from '../constants/codeNumbers';
 import ShowToast from '../components/Toast';
@@ -615,14 +615,11 @@ export const asyncLoginCounselor = userData => async (dispatch) => {
   dispatch(isLoading());
 
   try {
-    const counselorAuthenticated =
-      await counselorActionsAuxiliary.authenticatingCounselorInLogin(authenticationHeader);
+    const counselorAuthenticated = await counselorActionsAuxiliary.authenticatingCounselorInLogin(authenticationHeader);
 
-    const counselorWithProfile =
-      await counselorActionsAuxiliary.getUserProfileInLogin(counselorAuthenticated);
+    const counselorWithProfile = await counselorActionsAuxiliary.getUserProfileInLogin(counselorAuthenticated);
 
-    const counselorWithCodGroup =
-      await counselorActionsAuxiliary.getCodGroup(counselorWithProfile);
+    const counselorWithCodGroup = await counselorActionsAuxiliary.getCodGroup(counselorWithProfile);
 
     dispatch(setCounselor(counselorWithCodGroup));
 

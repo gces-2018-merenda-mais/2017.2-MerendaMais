@@ -6,7 +6,7 @@ import {
   View,
   Keyboard,
   BackHandler,
-  ScrollView
+  ScrollView,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
@@ -79,7 +79,8 @@ export default class LoginScreen extends React.Component {
             activeOpacity={0.6}
             onPress={() => Actions.registerScreen()}
           >
-            <Text>Ainda não se cadastrou?
+            <Text>
+Ainda não se cadastrou?
               <Text style={{ color: '#0000FF' }}> Cadastrar-se</Text>
             </Text>
           </TouchableOpacity>

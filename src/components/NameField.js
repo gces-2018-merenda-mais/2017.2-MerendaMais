@@ -22,14 +22,14 @@ class NameField extends React.Component {
       }
     }
     return style;
-  };
+  }
 
   validateName = (name, nameValidated) => {
     const validName = name.replace(/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g, '');
     nameValidated(validName);
-    let valid = false
+    let valid = false;
 
-    if(name.length > 3) valid = true;
+    if (name.length > 3) valid = true;
 
     if (this.state.isValid !== valid) {
       this.setState({ isValid: valid });
@@ -44,24 +44,24 @@ class NameField extends React.Component {
     const { value, nameValidated } = this.props;
     return (
       <View>
-      	<Text>Nome</Text>
-        <View style={this.setStyle()} >
+        <Text>Nome</Text>
+        <View style={this.setStyle()}>
           <MaterialIcons name="face" style={styles.icon} size={26} color="black" />
           <TextInput
             style={styles.InputStyle}
             placeholder="Digite o seu nome completo"
             placeholderTextColor="#95a5a6"
             underlineColorAndroid="transparent"
-            returnKeyLabel={'next'}
+            returnKeyLabel="next"
             maxLength={60}
-            keyboardType={'default'}
-            autoCapitalize={'words'}
+            keyboardType="default"
+            autoCapitalize="words"
             onChangeText={name => this.validateName(name, nameValidated)}
             value={value}
             onFocus={() => this.setState({ focused: true })}
           />
-      </View>
-      <ErrorMessage valid={this.state.isValid} errorText={this.state.errorMessage} />
+        </View>
+        <ErrorMessage valid={this.state.isValid} errorText={this.state.errorMessage} />
       </View>
     );
   }

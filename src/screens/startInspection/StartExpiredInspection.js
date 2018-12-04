@@ -10,7 +10,7 @@ import stylesList from '../../Styles/ListStyles';
 import ScheduleCard from '../../components/ScheduleCard';
 import Button from '../../components/Button';
 import { getVisitData } from '../../services/extractDataInspection';
-import {styles, buttonBox} from '../../Styles/StartInspection/StartExpiredInspectionStyles'
+import { styles, buttonBox } from '../../Styles/StartInspection/StartExpiredInspectionStyles';
 
 class StartExpiredInspection extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class StartExpiredInspection extends React.Component {
       return (
         <ActivityIndicator style={{ marginTop: 50 }} size="large" color="#FF9500" />
       );
-    } else if (this.props.listOfExpiredScheduleInAGroup.length === 0) {
+    } if (this.props.listOfExpiredScheduleInAGroup.length === 0) {
       return (
         <View style={stylesList.noneScheduleTextBox}>
           <Text style={stylesList.noneScheduleText}>Nenhum Agendamento Expirado!</Text>

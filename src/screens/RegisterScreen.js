@@ -142,7 +142,7 @@ export default class RegisterScreen extends React.Component {
     if (this.state.profile.valid) {
       this.props.asyncRegisterCounselor(this.state);
     } else {
-      Alert.alert(REGISTER_FAIL_TITLE, 'Existem campos inválidos! \n' + errorMessage);
+      Alert.alert(REGISTER_FAIL_TITLE, `Existem campos inválidos! \n${errorMessage}`);
     }
   }
 
@@ -160,8 +160,7 @@ export default class RegisterScreen extends React.Component {
               <Text>CPF</Text>
               <CpfField
                 value={this.state.profile.cpf}
-                callback={(validCpf, valid) =>
-                  this.setState({ profile: { ...this.state.profile, cpf: validCpf, valid } })}
+                callback={(validCpf, valid) => this.setState({ profile: { ...this.state.profile, cpf: validCpf, valid } })}
               />
 
               <NameField
@@ -199,19 +198,17 @@ export default class RegisterScreen extends React.Component {
 
               <PhoneField
                 value={this.state.profile.phone}
-                phoneValidated={validPhone =>
-                  this.setState({ profile: { ...this.state.profile, phone: validPhone } })}
+                phoneValidated={validPhone => this.setState({ profile: { ...this.state.profile, phone: validPhone } })}
               />
 
 
               <Text>Cargo</Text>
               <DropdownComponent
-                fieldName='Cargo'
+                fieldName="Cargo"
                 selectedValue={this.state.profile.isPresident}
-                callback={(isPresidentChecked, valid) =>
-                  this.setState(
-                    { profile: { ...this.state.profile, isPresident: isPresidentChecked, valid } },
-                  )}
+                callback={(isPresidentChecked, valid) => this.setState(
+                  { profile: { ...this.state.profile, isPresident: isPresidentChecked, valid } },
+                )}
                 pickerTitle={[
                   <Picker.Item value="" label="Escolha seu cargo" color="#95a5a6" />,
                 ]}
@@ -223,7 +220,7 @@ export default class RegisterScreen extends React.Component {
 
               <Text>Tipo de Conselheiro</Text>
               <DropdownComponent
-                fieldName='Tipo de Conselheiro'
+                fieldName="Tipo de Conselheiro"
                 selectedValue={this.state.profile.counselorType}
                 callback={(counselorTypeChecked, valid) => this.setState(
                   { profile: { ...this.state.profile, counselorType: counselorTypeChecked, valid } },
@@ -240,13 +237,13 @@ export default class RegisterScreen extends React.Component {
 
               <Text>Segmento</Text>
               <DropdownComponent
-                fieldName='Segmento'
+                fieldName="Segmento"
                 selectedValue={this.state.profile.segment}
                 callback={(segmentChecked, valid) => this.setState({
                   profile: {
                     ...this.state.profile,
                     segment: segmentChecked,
-                    valid
+                    valid,
                   },
                 })}
                 pickerTitle={[
@@ -262,11 +259,11 @@ export default class RegisterScreen extends React.Component {
 
               <Text>Tipo do CAE</Text>
               <DropdownComponent
-                fieldName='Tipo do CAE'
+                fieldName="Tipo do CAE"
                 selectedValue={this.state.profile.CAE_Type}
                 callback={(caeType, valid) => (
-                  caeType === STATE_COUNSELOR_CAE ?
-                    this.setState({
+                  caeType === STATE_COUNSELOR_CAE
+                    ? this.setState({
                       profile: {
                         ...this.state.profile,
                         CAE_Type: caeType,
@@ -275,14 +272,13 @@ export default class RegisterScreen extends React.Component {
                         valid,
                       },
                     })
-                    :
-                    this.setState({
+                    : this.setState({
                       profile: {
                         ...this.state.profile,
                         CAE_Type: caeType,
                         CAE: `${this.state.profile.CAE_municipalDistrict} ${UfInitials(this.state.profile.CAE_UF),
                         valid
-                      }`.trim(),
+                        }`.trim(),
                       },
                     })
                 )}
@@ -297,7 +293,7 @@ export default class RegisterScreen extends React.Component {
 
               <Text>UF do CAE</Text>
               <DropdownComponent
-                fieldName='CAE'
+                fieldName="CAE"
                 selectedValue={this.state.profile.CAE_UF}
                 callback={(checkedUf, valid) => this.setState({
                   profile: {
@@ -313,7 +309,8 @@ export default class RegisterScreen extends React.Component {
                 ]}
                 pickerBody={
                   brazilianStates.estados.map(
-                    item => (<Picker.Item label={item} value={item} color="#000000" />))}
+                    item => (<Picker.Item label={item} value={item} color="#000000" />),
+                  )}
               />
 
               {this.state.profile.CAE_Type === MUNICIPAL_COUNSELOR_CAE && this.state.profile.CAE_UF !== '' && (
@@ -333,7 +330,9 @@ export default class RegisterScreen extends React.Component {
               <Text>CAE</Text>
               <View style={[styles.InputFieldStyle, { justifyContent: 'center' }]}>
                 <Text>
-                  {this.state.profile.CAE_municipalDistrict} {UfInitials(this.state.profile.CAE_UF)}
+                  {this.state.profile.CAE_municipalDistrict}
+                  {' '}
+                  {UfInitials(this.state.profile.CAE_UF)}
                 </Text>
               </View>
 
@@ -359,7 +358,8 @@ export default class RegisterScreen extends React.Component {
             activeOpacity={0.6}
             onPress={() => Actions.loginScreen()}
           >
-            <Text>Já tem um cadastro?
+            <Text>
+Já tem um cadastro?
               <Text style={{ color: 'blue' }}> Entrar</Text>
             </Text>
           </TouchableOpacity>

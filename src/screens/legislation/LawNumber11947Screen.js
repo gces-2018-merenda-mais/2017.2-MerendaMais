@@ -17,7 +17,7 @@ import {
   LAW_11947_DATE,
 } from '../../constants/legislation/lawNumber11.947';
 import { backHandlerPop } from '../../NavigationFunctions';
-import styles from '../../Styles/LegislationStyles/LawNumber11947Styles'
+import styles from '../../Styles/LegislationStyles/LawNumber11947Styles';
 
 export default class LawNumber11947Screen extends Component {
   state = {
@@ -46,8 +46,8 @@ export default class LawNumber11947Screen extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>
         <Header
-          title={'Legislação'}
-          subTitle={'Lei Nº 11.947'}
+          title="Legislação"
+          subTitle="Lei Nº 11.947"
         />
         <ScrollView
           horizontal
